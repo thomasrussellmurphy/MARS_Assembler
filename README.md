@@ -11,7 +11,7 @@ MARS has been jointly developed by [Pete Sanderson][4] (programming) and [Ken Vo
 This repo is a mirror of the source code of MARS Assembler. Thought the source code is into the "MARS.jar" file at the download page, this is a mirror for people who wants to have the source code forked or that stuff.
 
 ## Documentation (included in the repo)
- - Go to the `[documentation][7].
+ - Go to the [documentation][7].
  - In order to run or compile MARS v4.XX, *MARS requires Java J2SE 1.5 (or later) SDK installed on your computer.*
 
 ## How to run MARS
@@ -28,10 +28,10 @@ This repo is a mirror of the source code of MARS Assembler. Thought the source c
 ## License
 [MIT][2]. Chech the [LICENSE][3] file. All the credits go to the original developers.
 
- 	[1]: http://courses.missouristate.edu/KenVollmar/MARS/index.htm
- 	[2]: http://www.opensource.org/licenses/mit-license.html
- 	[3]: https://github.com/adolphenom/MARS_Assembler/blob/master/LICENSE
- 	[4]: http://faculty.otterbein.edu/PSanderson/
- 	[5]: http://courses.missouristate.edu/KenVollmar/
- 	[6]: http://courses.missouristate.edu/KenVollmar/MARS/download.htm
- 	[7]: http://courses.missouristate.edu/KenVollmar/MARS/Help/MarsHelpIntro.html
+  [1]: http://courses.missouristate.edu/KenVollmar/MARS/index.htm
+  [2]: http://www.opensource.org/licenses/mit-license.html
+  [3]: https://github.com/adolphenom/MARS_Assembler/blob/master/LICENSE
+  [4]: http://faculty.otterbein.edu/PSanderson/
+  [5]: http://courses.missouristate.edu/KenVollmar/
+  [6]: http://courses.missouristate.edu/KenVollmar/MARS/download.htm
+  [7]: http://courses.missouristate.edu/KenVollmar/MARS/Help/MarsHelpIntro.html
