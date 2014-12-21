@@ -21,10 +21,8 @@ I'm not going to accept any pull request. This source code is not maintained by 
  - **Option C**: DOS shell using Java classes. Save the jar file in some folder. Open a DOS shell in that folder. Rename the jar file to "Mars.jar" for convenience. Extract MARS files with the DOS command  jar -xf Mars.jar Run MARS with the DOS command  java Mars
 
 ## How to compile
- - **Windows**: execute "CreateMarsJar.bat" file to generate an executable. You have to have 
-
-## To-Do
- - ".sh" file to create an executable. 
+ - **Windows**: execute "CreateMarsJar.bat" file to generate an executable.
+ - **GNU/Linux** and **Mac**: execute the "CreateMarsJar.sh" to generate an executable. If you can't due of permissions, do a "**chmod +x CreateMarsJar.sh**".
 
 ## License
 [MIT][2]. Chech the [LICENSE][3] file. All the credits go to the original developers.
