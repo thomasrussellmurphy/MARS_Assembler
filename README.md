@@ -7,7 +7,7 @@ MARS has been jointly developed by [Pete Sanderson][4] (programming) and [Ken Vo
 You can download the latest version [at the official website][6].
 
 ## Purpose of this repo
-This repo is a mirror of the source code of MARS Assembler. Thought the source code is into the "MARS.jar" file at the download page, this is a mirror for people who wants to have the source code forked or that stuff.
+This repo is a mirror of the source code of MARS Assembler. Though the source code is into the "MARS.jar" file at the download page, this is a mirror for people who wants to have the source code forked or that stuff.
 
 I'm not going to accept any pull request. This source code is not maintained by me but the original developers. If you want to contribute to the project, you should talk with them [going here][8].
 
