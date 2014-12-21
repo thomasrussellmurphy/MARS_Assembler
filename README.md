@@ -22,7 +22,7 @@ I'm not going to accept any pull request. This source code is not maintained by 
 
 ## How to compile
  - **Windows**: execute "CreateMarsJar.bat" file to generate an executable.
- - **GNU/Linux** and **Mac**: execute the "CreateMarsJar.sh" to generate an executable. If you can't due of permissions, do a "**chmod +x CreateMarsJar.sh**".
+ - **GNU/Linux** and **Mac**: execute the "CreateMarsJar.sh" to generate an executable. If you can't due of permissions, do a "**chmod +x CreateMarsJar.sh**" (Thanks to [@aesptux][8] to be the tester in Mac).
 
 ## License
 [MIT][2]. Chech the [LICENSE][3] file. All the credits go to the original developers.
@@ -34,3 +34,4 @@ I'm not going to accept any pull request. This source code is not maintained by 
   [5]: http://courses.missouristate.edu/KenVollmar/
   [6]: http://courses.missouristate.edu/KenVollmar/MARS/download.htm
   [7]: http://courses.missouristate.edu/KenVollmar/MARS/Help/MarsHelpIntro.html
+  [8]: http://twitter.com/aesptux
