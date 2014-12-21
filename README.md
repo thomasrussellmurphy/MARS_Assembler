@@ -12,15 +12,15 @@ This repo is a mirror of the source code of MARS Assembler. Thought the source c
 
 ## Documentation (included in the repo)
  - Go to the [documentation][7].
- - In order to run or compile MARS v4.XX, *MARS requires Java J2SE 1.5 (or later) SDK installed on your computer.*
+ - In order to run or compile MARS v4.XX, **MARS requires Java J2SE 1.5 (or later) SDK installed on your computer**.
 
 ## How to run MARS
- - *Option A*: Desktop. Save the jar file on the desktop. Run MARS by double-clicking the icon.
- - *Option B*: DOS shell using jar file. Save the jar file in some folder. Open a DOS shell in that folder. Rename the jar file to "Mars.jar" for convenience. Run MARS with the DOS command  java -jar Mars.jar
- - *Option C*: DOS shell using Java classes. Save the jar file in some folder. Open a DOS shell in that folder. Rename the jar file to "Mars.jar" for convenience. Extract MARS files with the DOS command  jar -xf Mars.jar Run MARS with the DOS command  java Mars
+ - **Option A**: Desktop. Save the jar file on the desktop. Run MARS by double-clicking the icon.
+ - **Option B**: DOS shell using jar file. Save the jar file in some folder. Open a DOS shell in that folder. Rename the jar file to "Mars.jar" for convenience. Run MARS with the DOS command  java -jar Mars.jar
+ - **Option C**: DOS shell using Java classes. Save the jar file in some folder. Open a DOS shell in that folder. Rename the jar file to "Mars.jar" for convenience. Extract MARS files with the DOS command  jar -xf Mars.jar Run MARS with the DOS command  java Mars
 
 ## How to compile
- - *Windows*: execute "CreateMarsJar.bat" file to generate an executable. You have to have 
+ - **Windows**: execute "CreateMarsJar.bat" file to generate an executable. You have to have 
 
 ## To-Do
  - ".sh" file to create an executable. 
