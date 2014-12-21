@@ -1,14 +1,15 @@
 ## MARS Assembler
-
 [MARS][1] is a lightweight interactive development environment (IDE) for programming in MIPS assembly language, intended for educational-level use with Patterson and Hennessy's Computer Organization and Design.
 
 MARS has been jointly developed by [Pete Sanderson][4] (programming) and [Ken Vollmar][5] (details and paperwork).
 
 ## Download
- - You can download the latest version [at the official website][6].
+You can download the latest version [at the official website][6].
 
 ## Purpose of this repo
 This repo is a mirror of the source code of MARS Assembler. Thought the source code is into the "MARS.jar" file at the download page, this is a mirror for people who wants to have the source code forked or that stuff.
+
+I'm not going to accept any pull request. This source code is not maintained by me but the original developers. If you want to contribute to the project, you should talk with them [going here][8].
 
 ## Documentation (included in the repo)
  - Go to the [documentation][7].
