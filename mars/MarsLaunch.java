@@ -236,6 +236,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	// launching the GUI-fronted integrated development environment.
    	
       private void launchIDE() {
+
+         try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            // handle exception
+         }
+
          // System.setProperty("apple.laf.useScreenMenuBar", "true"); // Puts MARS menu on Mac OS menu bar
          new MarsSplashScreen(splashDuration).showSplash();
          SwingUtilities.invokeLater(
