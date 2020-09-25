@@ -1,9 +1,11 @@
-   package mars.venus;
-   import mars.*;
-   import java.awt.*;
-   import java.awt.event.*;
-   import javax.swing.*;
-   import javax.swing.undo.*;
+package mars.venus;
+
+import mars.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.undo.*;
 	
 	/*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -32,33 +34,34 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT license, http://www.opensource.org/licenses/mit-license.html)
  */
-	
+
+/**
+ * Action  for the Edit -> Redo menu item
+ */
+public class EditRedoAction extends GuiAction {
+
+    public EditRedoAction(String name, Icon icon, String descrip,
+                          Integer mnemonic, KeyStroke accel, VenusUI gui) {
+        super(name, icon, descrip, mnemonic, accel, gui);
+        setEnabled(false);
+    }
+
     /**
-    * Action  for the Edit -> Redo menu item
-    */   			
-    public class EditRedoAction extends GuiAction {
-   	 
-       public EditRedoAction(String name, Icon icon, String descrip,
-                             Integer mnemonic, KeyStroke accel, VenusUI gui) {
-         super(name, icon, descrip, mnemonic, accel, gui);
-         setEnabled(false);
-      }
-   	  /**
-   	   * Adapted from TextComponentDemo.java in the
-   	   * Java Tutorial "Text Component Features"
-   		*/
-       public void actionPerformed(ActionEvent e) {
-         EditPane editPane = mainUI.getMainPane().getEditPane();
-         if (editPane != null) {
+     * Adapted from TextComponentDemo.java in the
+     * Java Tutorial "Text Component Features"
+     */
+    public void actionPerformed(ActionEvent e) {
+        EditPane editPane = mainUI.getMainPane().getEditPane();
+        if (editPane != null) {
             editPane.redo();
             updateRedoState();
             mainUI.editUndoAction.updateUndoState();
-         }
-      }
-   
-       void updateRedoState() {
-         EditPane editPane = mainUI.getMainPane().getEditPane();
-         setEnabled(editPane != null && editPane.getUndoManager().canRedo());
-      }
-   }
+        }
+    }
+
+    void updateRedoState() {
+        EditPane editPane = mainUI.getMainPane().getEditPane();
+        setEnabled(editPane != null && editPane.getUndoManager().canRedo());
+    }
+}
 	

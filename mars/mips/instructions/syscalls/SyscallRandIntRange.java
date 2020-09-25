@@ -1,9 +1,11 @@
-   package mars.mips.instructions.syscalls;
-   import mars.util.*;
-   import mars.mips.hardware.*;
-   import mars.simulator.*;
-   import mars.*;
-   import java.util.Random;
+package mars.mips.instructions.syscalls;
+
+import mars.util.*;
+import mars.mips.hardware.*;
+import mars.simulator.*;
+import mars.*;
+
+import java.util.Random;
 
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar
@@ -34,44 +36,42 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 
-/** 
+/**
  * Service to return a random integer in a specified range.
- *
  */
- 
-    public class SyscallRandIntRange extends AbstractSyscall {
-   /**
-    * Build an instance of the syscall with its default service number and name.
-    */
-       public SyscallRandIntRange() {
-         super(42, "RandIntRange");
-      }
-      
-   /**
-   * System call to the random number generator, with an upper range specified.
-   * Return in $a0 the next pseudorandom, uniformly distributed int value between 0 (inclusive)
-   * and the specified value (exclusive), drawn from this random number generator's sequence.
-   */
-       public void simulate(ProgramStatement statement) throws ProcessingException {
-          // Input arguments:
-          //    $a0 = index of pseudorandom number generator
-          //    $a1 = the upper bound of range of returned values.
-          // Return: $a0 = the next pseudorandom, uniformly distributed int value from this
-          // random number generator's sequence.
-         Integer index = new Integer(RegisterFile.getValue(4));
-         Random stream = (Random) RandomStreams.randomStreams.get(index);
-         if (stream == null) {
+
+public class SyscallRandIntRange extends AbstractSyscall {
+    /**
+     * Build an instance of the syscall with its default service number and name.
+     */
+    public SyscallRandIntRange() {
+        super(42, "RandIntRange");
+    }
+
+    /**
+     * System call to the random number generator, with an upper range specified.
+     * Return in $a0 the next pseudorandom, uniformly distributed int value between 0 (inclusive)
+     * and the specified value (exclusive), drawn from this random number generator's sequence.
+     */
+    public void simulate(ProgramStatement statement) throws ProcessingException {
+        // Input arguments:
+        //    $a0 = index of pseudorandom number generator
+        //    $a1 = the upper bound of range of returned values.
+        // Return: $a0 = the next pseudorandom, uniformly distributed int value from this
+        // random number generator's sequence.
+        Integer index = new Integer(RegisterFile.getValue(4));
+        Random stream = (Random) RandomStreams.randomStreams.get(index);
+        if (stream == null) {
             stream = new Random(); // create a non-seeded stream
             RandomStreams.randomStreams.put(index, stream);
-         } 
-         try {
-            RegisterFile.updateRegister(4, stream.nextInt( RegisterFile.getValue(5) ) );
-         } 
-             catch (IllegalArgumentException iae) {
-               throw new ProcessingException(statement,
-                       "Upper bound of range cannot be negative (syscall "+this.getNumber()+")",
-                             Exceptions.SYSCALL_EXCEPTION);			 
-            }
-      }
-   
-   }
+        }
+        try {
+            RegisterFile.updateRegister(4, stream.nextInt(RegisterFile.getValue(5)));
+        } catch (IllegalArgumentException iae) {
+            throw new ProcessingException(statement,
+                    "Upper bound of range cannot be negative (syscall " + this.getNumber() + ")",
+                    Exceptions.SYSCALL_EXCEPTION);
+        }
+    }
+
+}

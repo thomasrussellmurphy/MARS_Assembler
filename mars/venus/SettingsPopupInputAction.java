@@ -1,8 +1,9 @@
-   package mars.venus;
+package mars.venus;
 
-	import mars.*;
-   import java.awt.event.*;
-   import javax.swing.*;
+import mars.*;
+
+import java.awt.event.*;
+import javax.swing.*;
 	
 	/*
 Copyright (c) 2003-2010,  Pete Sanderson and Kenneth Vollmar
@@ -31,21 +32,21 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT license, http://www.opensource.org/licenses/mit-license.html)
  */
-	
-   /**
-    * Action class for the Settings menu item to control use of popup dialog for input syscalls.
-    */
-    public class SettingsPopupInputAction extends GuiAction  {
-   	
-   
-       public SettingsPopupInputAction(String name, Icon icon, String descrip,
-                             Integer mnemonic, KeyStroke accel, VenusUI gui) {
-         super(name, icon, descrip, mnemonic, accel, gui);
-      }
-   		 
-       public void actionPerformed(ActionEvent e) {
-		   boolean usePopup = ((JCheckBoxMenuItem) e.getSource()).isSelected();
-         Globals.getSettings().setBooleanSetting(Settings.POPUP_SYSCALL_INPUT, usePopup);
-      }
-   	   	
-   }
+
+/**
+ * Action class for the Settings menu item to control use of popup dialog for input syscalls.
+ */
+public class SettingsPopupInputAction extends GuiAction {
+
+
+    public SettingsPopupInputAction(String name, Icon icon, String descrip,
+                                    Integer mnemonic, KeyStroke accel, VenusUI gui) {
+        super(name, icon, descrip, mnemonic, accel, gui);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        boolean usePopup = ((JCheckBoxMenuItem) e.getSource()).isSelected();
+        Globals.getSettings().setBooleanSetting(Settings.POPUP_SYSCALL_INPUT, usePopup);
+    }
+
+}

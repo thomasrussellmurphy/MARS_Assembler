@@ -1,8 +1,9 @@
-   package mars.mips.instructions.syscalls;
-   import mars.util.*;
-   import mars.simulator.*;
-   import mars.mips.hardware.*;
-   import mars.*;
+package mars.mips.instructions.syscalls;
+
+import mars.util.*;
+import mars.simulator.*;
+import mars.mips.hardware.*;
+import mars.*;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -33,34 +34,31 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 
-/** 
+/**
  * Service to read the bits of input float into $f0
  */
- 
-    public class SyscallReadFloat extends AbstractSyscall {
-   /**
-    * Build an instance of the Read Float syscall.  Default service number
-    * is 6 and name is "ReadFloat".
-    */
-       public SyscallReadFloat() {
-         super(6, "ReadFloat");
-      }
-      
-   /**
-   * Performs syscall function to read the bits of input float into $f0
-   */
-       public void simulate(ProgramStatement statement) throws ProcessingException {
-         float floatValue = 0;
-         try
-         {
+
+public class SyscallReadFloat extends AbstractSyscall {
+    /**
+     * Build an instance of the Read Float syscall.  Default service number
+     * is 6 and name is "ReadFloat".
+     */
+    public SyscallReadFloat() {
+        super(6, "ReadFloat");
+    }
+
+    /**
+     * Performs syscall function to read the bits of input float into $f0
+     */
+    public void simulate(ProgramStatement statement) throws ProcessingException {
+        float floatValue = 0;
+        try {
             floatValue = SystemIO.readFloat(this.getNumber());
-         } 
-             catch (NumberFormatException e)
-            {
-               throw new ProcessingException(statement,
-                  "invalid float input (syscall "+this.getNumber()+")",
-						Exceptions.SYSCALL_EXCEPTION);
-            }
-         Coprocessor1.updateRegister(0, Float.floatToRawIntBits(floatValue));
-      }
-   }
+        } catch (NumberFormatException e) {
+            throw new ProcessingException(statement,
+                    "invalid float input (syscall " + this.getNumber() + ")",
+                    Exceptions.SYSCALL_EXCEPTION);
+        }
+        Coprocessor1.updateRegister(0, Float.floatToRawIntBits(floatValue));
+    }
+}

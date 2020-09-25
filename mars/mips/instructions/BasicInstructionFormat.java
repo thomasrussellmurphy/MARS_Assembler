@@ -35,8 +35,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * instruction.  The I-branch-format is defined by me, not MIPS, to to indicate this is
  * a Branch instruction, specifically to distinguish immediate
  * values used as target addresses.
- * 
- * @author Pete Sanderson 
+ *
+ * @author Pete Sanderson
  * @version August 2003
  */
 public class BasicInstructionFormat {
@@ -44,7 +44,7 @@ public class BasicInstructionFormat {
     public static final BasicInstructionFormat I_FORMAT = new BasicInstructionFormat();
     public static final BasicInstructionFormat I_BRANCH_FORMAT = new BasicInstructionFormat();
     public static final BasicInstructionFormat J_FORMAT = new BasicInstructionFormat();
-    
+
     // private default constructor prevents objects of this class other than those above.
     private BasicInstructionFormat() {
     }

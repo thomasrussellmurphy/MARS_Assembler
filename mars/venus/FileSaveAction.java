@@ -1,9 +1,11 @@
-   package mars.venus;
-   import mars.*;
-   import java.awt.*;
-   import java.awt.event.*;
-   import javax.swing.*;
-   import java.io.*;
+package mars.venus;
+
+import mars.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.io.*;
  
  /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -32,23 +34,23 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT license, http://www.opensource.org/licenses/mit-license.html)
  */
- 
+
+/**
+ * Action  for the File -> Save menu item
+ */
+public class FileSaveAction extends GuiAction {
+
+    public FileSaveAction(String name, Icon icon, String descrip,
+                          Integer mnemonic, KeyStroke accel, VenusUI gui) {
+        super(name, icon, descrip, mnemonic, accel, gui);
+    }
+
     /**
-    * Action  for the File -> Save menu item
-    */   			
-    public class FileSaveAction extends GuiAction {
-   	 
-       public FileSaveAction(String name, Icon icon, String descrip,
-                             Integer mnemonic, KeyStroke accel, VenusUI gui) {
-         super(name, icon, descrip, mnemonic, accel, gui);
-      }
-   
-      	/** 
-			* saves the file, if not alredy saved it will do a saveAs
-			*/
-   
-       public void actionPerformed(ActionEvent e){
-         mainUI.editor.save();
-      }
-                  
-   }
+     * saves the file, if not alredy saved it will do a saveAs
+     */
+
+    public void actionPerformed(ActionEvent e) {
+        mainUI.editor.save();
+    }
+
+}

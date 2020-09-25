@@ -1,8 +1,10 @@
-   package mars.venus;
-   import mars.*;
-   import java.awt.*;
-   import java.awt.event.*;
-   import javax.swing.*;
+package mars.venus;
+
+import mars.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
  
  /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -31,18 +33,18 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT license, http://www.opensource.org/licenses/mit-license.html)
  */
- 
-    /**
-    * Action  for the File -> Close All menu item
-    */   			
-    public class FileSaveAllAction extends GuiAction {
-   	 
-       public FileSaveAllAction(String name, Icon icon, String descrip,
+
+/**
+ * Action  for the File -> Close All menu item
+ */
+public class FileSaveAllAction extends GuiAction {
+
+    public FileSaveAllAction(String name, Icon icon, String descrip,
                              Integer mnemonic, KeyStroke accel, VenusUI gui) {
-         super(name, icon, descrip, mnemonic, accel, gui);
-      }
-   	
-       public void actionPerformed(ActionEvent e){
-		      mainUI.editor.saveAll();
-      }
-   }
+        super(name, icon, descrip, mnemonic, accel, gui);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        mainUI.editor.saveAll();
+    }
+}

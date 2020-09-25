@@ -1,6 +1,7 @@
-   package mars.venus;
-   import java.awt.event.*;
-   import javax.swing.*;
+package mars.venus;
+
+import java.awt.event.*;
+import javax.swing.*;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -36,24 +37,24 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // Menu selections themselves are handled separately.
 // Code below is adapted from Java Tutorial on working with menus.
 
-    public class PopupListener extends MouseAdapter { 
-       private JPopupMenu popup;
-   	 
-   	 public PopupListener(JPopupMenu p) {
-   	    popup = p;
-   		}
-   		
-       public void mousePressed(MouseEvent e) { 
-         maybeShowPopup(e); 
-      } 
-      
-       public void mouseReleased(MouseEvent e) { 
-         maybeShowPopup(e); 
-      } 
-      
-       private void maybeShowPopup(MouseEvent e) {
-         if (e.isPopupTrigger()) {
-            popup.show(e.getComponent(), e.getX(), e.getY()); 
-         }
-      }
-   }
+public class PopupListener extends MouseAdapter {
+    private JPopupMenu popup;
+
+    public PopupListener(JPopupMenu p) {
+        popup = p;
+    }
+
+    public void mousePressed(MouseEvent e) {
+        maybeShowPopup(e);
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        maybeShowPopup(e);
+    }
+
+    private void maybeShowPopup(MouseEvent e) {
+        if (e.isPopupTrigger()) {
+            popup.show(e.getComponent(), e.getX(), e.getY());
+        }
+    }
+}

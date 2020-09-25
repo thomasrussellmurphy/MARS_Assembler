@@ -1,8 +1,10 @@
-   package mars.venus;
-   import mars.*;
-   import java.awt.*;
-   import java.awt.event.*;
-   import javax.swing.*;
+package mars.venus;
+
+import mars.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 	
 	/*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar
@@ -31,23 +33,23 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 (MIT license, http://www.opensource.org/licenses/mit-license.html)
  */
-	
+
+/**
+ * Action  for the File -> Exit menu item
+ */
+public class FileExitAction extends GuiAction {
+
+    public FileExitAction(String name, Icon icon, String descrip,
+                          Integer mnemonic, KeyStroke accel, VenusUI gui) {
+        super(name, icon, descrip, mnemonic, accel, gui);
+    }
+
     /**
-    * Action  for the File -> Exit menu item
-    */   			
-    public class FileExitAction extends GuiAction {
-   	 
-       public FileExitAction(String name, Icon icon, String descrip,
-                             Integer mnemonic, KeyStroke accel, VenusUI gui) {
-         super(name, icon, descrip, mnemonic, accel, gui);
-      }
-   		 
-   	/**
-		 * Exit MARS, unless one or more files have unsaved edits and user cancels.
-		 */	  
-       public void actionPerformed(ActionEvent e){
-		    if (mainUI.editor.closeAll()) {
-             System.exit(0);
-			 }
-      }
-   }   
+     * Exit MARS, unless one or more files have unsaved edits and user cancels.
+     */
+    public void actionPerformed(ActionEvent e) {
+        if (mainUI.editor.closeAll()) {
+            System.exit(0);
+        }
+    }
+}   
