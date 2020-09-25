@@ -162,7 +162,7 @@ public class Simulator extends Observable {
         void stopped(Simulator s);
     }
 
-    private ArrayList<StopListener> stopListeners = new ArrayList<StopListener>(1);
+    private ArrayList<StopListener> stopListeners = new ArrayList<>(1);
 
     public void addStopListener(StopListener l) {
         stopListeners.add(l);

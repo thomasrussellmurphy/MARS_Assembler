@@ -113,7 +113,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
         data = new Object[sourceStatementList.size()][columnNames.length];
         intAddresses = new int[data.length];
         addressRows = new Hashtable(data.length);
-        executeMods = new Hashtable<Integer, ModifiedCode>(data.length);
+        executeMods = new Hashtable<>(data.length);
         // Get highest source line number to determine #leading spaces so line numbers will vertically align
         // In multi-file situation, this will not necessarily be the last line b/c sourceStatementList contains
         // source lines from all files.  DPS 3-Oct-10

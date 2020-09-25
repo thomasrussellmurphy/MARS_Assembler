@@ -434,7 +434,7 @@ public class Assembler {
     private ArrayList<ProgramStatement> parseLine(TokenList tokenList, String source,
                                                   int sourceLineNumber, boolean extendedAssemblerEnabled) {
 
-        ArrayList<ProgramStatement> ret = new ArrayList<ProgramStatement>();
+        ArrayList<ProgramStatement> ret = new ArrayList<>();
 
         ProgramStatement programStatement;
         TokenList tokens = this.stripComment(tokenList);

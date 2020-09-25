@@ -61,8 +61,8 @@ public class Macro {
         program = null;
         fromLine = toLine = 0;
         origFromLine = origToLine = 0;
-        args = new ArrayList<String>();
-        labels = new ArrayList<String>();
+        args = new ArrayList<>();
+        labels = new ArrayList<>();
     }
 
     public String getName() {
