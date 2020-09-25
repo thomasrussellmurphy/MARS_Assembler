@@ -265,7 +265,7 @@ public class BHTSimulator extends AbstractMarsToolAndApplication implements Acti
         int funct = stmt.getBinaryStatement() & 0x1F;
 
         if (opCode == 0x01) {
-            if (0x00 <= funct && funct <= 0x07) return true; //  bltz, bgez, bltzl, bgezl
+            if (0x00 <= funct && funct <= 0x07) return true; // bltz, bgez, bltzl, bgezl
             if (0x10 <= funct && funct <= 0x13) return true; // bltzal, bgezal, bltzall, bgczall			
         }
 

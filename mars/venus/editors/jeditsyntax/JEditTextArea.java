@@ -2096,10 +2096,8 @@ public class JEditTextArea extends JComponent {
             // cool for following the tokens...
             //System.out.print("(JEditTextArea.java) Token Stream:");
             Token toke = tokens;
-            for (; ; ) {
+            while (toke.id != Token.END) {
                 //System.out.print(" "+toke.id+"("+toke.length+")");
-                if (toke.id == Token.END)
-                    break;
                 toke = toke.next;
             }
             //System.out.println();
