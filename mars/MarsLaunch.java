@@ -8,9 +8,7 @@ import mars.simulator.*;
 
 import java.io.*;
 import java.util.*;
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.JOptionPane;   // KENV 9/8/2004
 
 /*
 Copyright (c) 2003-2012,  Pete Sanderson and Kenneth Vollmar

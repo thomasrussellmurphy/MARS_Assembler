@@ -1,8 +1,5 @@
 package mars.venus;
 
-import mars.*;
-
-import javax.swing.*;
 import java.io.*;
  
  /*

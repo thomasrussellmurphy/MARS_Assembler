@@ -10,7 +10,6 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.undo.*;
-import java.text.*;
 import java.util.*;
 import java.io.*;
 

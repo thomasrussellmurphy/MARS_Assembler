@@ -1,13 +1,11 @@
 package mars;
 
-import mars.venus.*;
 import mars.assembler.*;
 import mars.simulator.*;
 import mars.mips.hardware.*;
 
 import java.util.*;
 import java.io.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 /*

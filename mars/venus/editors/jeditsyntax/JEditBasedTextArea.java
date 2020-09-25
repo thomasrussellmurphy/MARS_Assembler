@@ -7,7 +7,6 @@ import mars.*;
 
 import java.awt.*;
 import javax.swing.event.*;
-import javax.swing.text.*;
 import javax.swing.undo.*;
 import javax.swing.*;
 

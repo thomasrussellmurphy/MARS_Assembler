@@ -8,7 +8,6 @@ import mars.mips.instructions.*;
 
 import java.util.*;
 import javax.swing.*;
-import java.awt.event.*;
 	
 	/*
 Copyright (c) 2003-2010,  Pete Sanderson and Kenneth Vollmar

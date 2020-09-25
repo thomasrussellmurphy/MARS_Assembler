@@ -14,7 +14,6 @@ import java.awt.event.*;
 import java.awt.Toolkit;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import java.util.Properties;
 
 /**
  * The default input handler. It maps sequences of keystrokes into actions

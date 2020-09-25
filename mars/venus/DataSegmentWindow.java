@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.table.*;
-import javax.swing.border.*;
 import javax.swing.event.*;
 
 /*

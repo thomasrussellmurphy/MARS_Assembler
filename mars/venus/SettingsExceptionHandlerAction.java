@@ -1,13 +1,10 @@
 package mars.venus;
 
-import mars.simulator.*;
 import mars.*;
 
-import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.text.*;
 import javax.swing.border.*;
 import java.io.*;
 	

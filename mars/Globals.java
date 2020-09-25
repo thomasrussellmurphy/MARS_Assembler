@@ -7,7 +7,6 @@ import mars.assembler.*;
 import mars.venus.*;
 import mars.util.*;
 
-import java.io.*;
 import java.util.*;
 	
 /*

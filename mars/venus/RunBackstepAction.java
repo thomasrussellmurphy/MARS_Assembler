@@ -3,7 +3,6 @@ package mars.venus;
 import mars.*;
 import mars.mips.hardware.*;
 
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 	

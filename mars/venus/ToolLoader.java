@@ -5,9 +5,7 @@ import mars.util.*;
 
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.*;
 import java.util.*;
-import java.util.zip.*;
 import java.lang.reflect.*;
 	
 	/*

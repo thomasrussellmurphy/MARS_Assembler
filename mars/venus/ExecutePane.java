@@ -4,7 +4,6 @@ import mars.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.*;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

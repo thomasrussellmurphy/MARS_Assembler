@@ -1,7 +1,6 @@
 package mars.assembler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 import mars.ErrorList;

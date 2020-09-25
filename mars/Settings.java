@@ -4,7 +4,6 @@ import mars.*;
 import mars.util.*;
 import mars.venus.editors.jeditsyntax.*;
 
-import java.io.*;
 import java.util.*;
 import java.util.prefs.*;
 import java.awt.Color;
