@@ -56,6 +56,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 							  "Java Examples in a Nutshell 3rd Edition, O'Reilly, ISBN 0-596-00620-9.",
 							  "About Mars",
 							  JOptionPane.INFORMATION_MESSAGE,
-							  new ImageIcon("images/RedMars50.gif"));
+							  new ImageIcon("images/favicon.png"));
       }
    }
