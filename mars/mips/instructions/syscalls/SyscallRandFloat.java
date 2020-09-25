@@ -57,7 +57,7 @@ public class SyscallRandFloat extends AbstractSyscall {
         // Input arguments: $a0 = index of pseudorandom number generator
         // Return: $f0 = the next pseudorandom, uniformly distributed float value between 0.0 and 1.0
         // from this random number generator's sequence.
-        Integer index = new Integer(RegisterFile.getValue(4));
+        Integer index = RegisterFile.getValue(4);
         Random stream = (Random) RandomStreams.randomStreams.get(index);
         if (stream == null) {
             stream = new Random(); // create a non-seeded stream

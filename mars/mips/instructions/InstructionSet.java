@@ -1451,7 +1451,7 @@ public class InstructionSet {
                                         || floatValue > (float) Integer.MAX_VALUE) {
                                     round = Integer.MAX_VALUE;
                                 } else {
-                                    Float floatObj = new Float(floatValue);
+                                    Float floatObj = floatValue;
                                     // If we are EXACTLY in the middle, then round to even!  To determine this,
                                     // find next higher integer and next lower integer, then see if distances
                                     // are exactly equal.
@@ -1678,7 +1678,7 @@ public class InstructionSet {
                                         || doubleValue > (double) Integer.MAX_VALUE) {
                                     round = Integer.MAX_VALUE;
                                 } else {
-                                    Double doubleObj = new Double(doubleValue);
+                                    Double doubleObj = doubleValue;
                                     // If we are EXACTLY in the middle, then round to even!  To determine this,
                                     // find next higher integer and next lower integer, then see if distances
                                     // are exactly equal.
@@ -2688,8 +2688,8 @@ public class InstructionSet {
             Object rawInstr = instructionList.get(i);
             if (rawInstr instanceof BasicInstruction) {
                 BasicInstruction basic = (BasicInstruction) rawInstr;
-                Integer mask = Integer.valueOf(basic.getOpcodeMask());
-                Integer match = Integer.valueOf(basic.getOpcodeMatch());
+                Integer mask = basic.getOpcodeMask();
+                Integer match = basic.getOpcodeMatch();
                 HashMap matchMap = (HashMap) maskMap.get(mask);
                 if (matchMap == null) {
                     matchMap = new HashMap();
@@ -2935,7 +2935,7 @@ public class InstructionSet {
         }
 
         public BasicInstruction find(int instr) {
-            int match = Integer.valueOf(instr & mask);
+            int match = instr & mask;
             return (BasicInstruction) matchMap.get(match);
         }
     }

@@ -168,7 +168,7 @@ class Magnifier extends JFrame implements ComponentListener {
         scaleAdjuster.addChangeListener(
                 new ChangeListener() {
                     public void stateChanged(ChangeEvent e) {
-                        scale = ((Double) scaleAdjuster.getValue()).doubleValue();
+                        scale = (Double) scaleAdjuster.getValue();
                         if (captureRescale.isEnabled()) {
                             captureActionListener.actionPerformed(
                                     new ActionEvent(frame, 0, "capture"));
@@ -401,10 +401,10 @@ class SettingsDialog extends JDialog {
     JButton applyButton, cancelButton;
     JCheckBox captureResizeCheckBox, captureMoveCheckBox, captureRescaleCheckBox;
     JRadioButton captureDisplayCenteredButton, captureDisplayUpperleftButton;
-    Integer[] scribblerLineWidthSettings = {new Integer(1), new Integer(2),
-            new Integer(3), new Integer(4),
-            new Integer(5), new Integer(6),
-            new Integer(7), new Integer(8)};
+    Integer[] scribblerLineWidthSettings = {1, 2,
+            3, 4,
+            5, 6,
+            7, 8};
     JComboBox lineWidthSetting;
     JButton lineColorSetting;
     JCheckBox dialogCentered; // Whether or not dialog appears centered over the magnfier frame.
@@ -463,7 +463,7 @@ class SettingsDialog extends JDialog {
                         } else if (captureDisplayUpperleftButton.isSelected()) {
                             ((Magnifier) getOwner()).alignment = new CaptureDisplayUpperleft();
                         }
-                        ((Magnifier) getOwner()).scribblerSettings.setLineWidth(scribblerLineWidthSettings[lineWidthSetting.getSelectedIndex()].intValue());
+                        ((Magnifier) getOwner()).scribblerSettings.setLineWidth(scribblerLineWidthSettings[lineWidthSetting.getSelectedIndex()]);
                         ((Magnifier) getOwner()).scribblerSettings.setLineColor(lineColorSetting.getBackground());
                         dialog.dispose();
                     }

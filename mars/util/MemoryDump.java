@@ -64,8 +64,8 @@ public class MemoryDump {
         for (int i = 0; i < segmentNames.length; i++) {
             if (segmentNames[i].equals(segment)) {
                 Integer[] bounds = new Integer[2];
-                bounds[0] = new Integer(getBaseAddresses(segmentNames)[i]);
-                bounds[1] = new Integer(getLimitAddresses(segmentNames)[i]);
+                bounds[0] = getBaseAddresses(segmentNames)[i];
+                bounds[1] = getLimitAddresses(segmentNames)[i];
                 return bounds;
             }
         }

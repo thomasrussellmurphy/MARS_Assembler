@@ -110,7 +110,7 @@ public abstract class AbstractFontSettingDialog extends JDialog {
         fontSizeSelector.addChangeListener(
                 new ChangeListener() {
                     public void stateChanged(ChangeEvent e) {
-                        Integer value = new Integer(((JSlider) e.getSource()).getValue());
+                        Integer value = ((JSlider) e.getSource()).getValue();
                         fontSizeSpinSelector.setValue(value);
                         fontSample.setFont(getFont());
                     }
@@ -122,7 +122,7 @@ public abstract class AbstractFontSettingDialog extends JDialog {
                 new ChangeListener() {
                     public void stateChanged(ChangeEvent e) {
                         Object value = ((JSpinner) e.getSource()).getValue();
-                        fontSizeSelector.setValue(((Integer) value).intValue());
+                        fontSizeSelector.setValue((Integer) value);
                         fontSample.setFont(getFont());
                     }
                 });
@@ -187,7 +187,7 @@ public abstract class AbstractFontSettingDialog extends JDialog {
         fontFamilySelector.setSelectedItem(initialFontFamily);
         fontStyleSelector.setSelectedItem(initialFontStyle);
         fontSizeSelector.setValue(EditorFont.sizeStringToSizeInt(initialFontSize));
-        fontSizeSpinSelector.setValue(new Integer(EditorFont.sizeStringToSizeInt(initialFontSize)));
+        fontSizeSpinSelector.setValue(EditorFont.sizeStringToSizeInt(initialFontSize));
     }
 
     /**

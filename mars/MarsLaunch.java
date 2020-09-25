@@ -184,8 +184,8 @@ public class MarsLaunch {
                 try {
                     String[] memoryRange = checkMemoryAddressRange(triple[0]);
                     segInfo = new Integer[2];
-                    segInfo[0] = new Integer(Binary.stringToInt(memoryRange[0])); // low end of range
-                    segInfo[1] = new Integer(Binary.stringToInt(memoryRange[1])); // high end of range
+                    segInfo[0] = Binary.stringToInt(memoryRange[0]); // low end of range
+                    segInfo[1] = Binary.stringToInt(memoryRange[1]); // high end of range
                 } catch (NumberFormatException nfe) {
                     segInfo = null;
                 } catch (NullPointerException npe) {
@@ -204,12 +204,12 @@ public class MarsLaunch {
                 continue;
             }
             try {
-                int highAddress = Globals.memory.getAddressOfFirstNull(segInfo[0].intValue(), segInfo[1].intValue()) - Memory.WORD_LENGTH_BYTES;
-                if (highAddress < segInfo[0].intValue()) {
+                int highAddress = Globals.memory.getAddressOfFirstNull(segInfo[0], segInfo[1]) - Memory.WORD_LENGTH_BYTES;
+                if (highAddress < segInfo[0]) {
                     out.println("This segment has not been written to, there is nothing to dump.");
                     continue;
                 }
-                format.dumpMemoryRange(file, segInfo[0].intValue(), highAddress);
+                format.dumpMemoryRange(file, segInfo[0], highAddress);
             } catch (FileNotFoundException e) {
                 out.println("Error while attempting to save dump, file " + file + " was not found!");
                 continue;
@@ -325,7 +325,7 @@ public class MarsLaunch {
             if (args[i].toLowerCase().indexOf("ae") == 0) {
                 String s = args[i].substring(2);
                 try {
-                    assembleErrorExitCode = Integer.decode(s).intValue();
+                    assembleErrorExitCode = Integer.decode(s);
                     continue;
                 } catch (NumberFormatException nfe) {
                     // Let it fall thru and get handled by catch-all
@@ -335,7 +335,7 @@ public class MarsLaunch {
             if (args[i].toLowerCase().indexOf("se") == 0) {
                 String s = args[i].substring(2);
                 try {
-                    simulateErrorExitCode = Integer.decode(s).intValue();
+                    simulateErrorExitCode = Integer.decode(s);
                     continue;
                 } catch (NumberFormatException nfe) {
                     // Let it fall thru and get handled by catch-all
@@ -423,7 +423,7 @@ public class MarsLaunch {
             // Check for stand-alone integer, which is the max execution steps option
             try {
                 Integer.decode(args[i]);
-                maxSteps = Integer.decode(args[i]).intValue(); // if we got here, it has to be OK
+                maxSteps = Integer.decode(args[i]); // if we got here, it has to be OK
                 continue;
             } catch (NumberFormatException nfe) {
             }
@@ -706,7 +706,7 @@ public class MarsLaunch {
                     // Allow display of binary text segment (machine code) DPS 14-July-2008
                     if (Memory.inTextSegment(addr) || Memory.inKernelTextSegment(addr)) {
                         Integer iValue = Globals.memory.getRawWordOrNull(addr);
-                        value = (iValue == null) ? 0 : iValue.intValue();
+                        value = (iValue == null) ? 0 : iValue;
                     } else {
                         value = Globals.memory.getWord(addr);
                     }

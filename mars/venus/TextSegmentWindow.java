@@ -130,7 +130,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
         for (int i = 0; i < sourceStatementList.size(); i++) {
             ProgramStatement statement = (ProgramStatement) sourceStatementList.get(i);
             intAddresses[i] = statement.getAddress();
-            addressRows.put(new Integer(intAddresses[i]), new Integer(i));
+            addressRows.put(intAddresses[i], i);
             data[i][BREAK_COLUMN] = Boolean.FALSE;
             data[i][ADDRESS_COLUMN] = NumberDisplayBaseChooser.formatUnsignedInteger(statement.getAddress(), addressBase);
             data[i][CODE_COLUMN] = NumberDisplayBaseChooser.formatNumber(statement.getBinaryStatement(), 16);
@@ -424,7 +424,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
     public int getBreakpointCount() {
         int breakpointCount = 0;
         for (int i = 0; i < data.length; i++) {
-            if (((Boolean) data[i][BREAK_COLUMN]).booleanValue()) {
+            if ((Boolean) data[i][BREAK_COLUMN]) {
                 breakpointCount++;
             }
         }
@@ -445,7 +445,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
         int[] breakpoints = new int[breakpointCount];
         breakpointCount = 0;
         for (int i = 0; i < data.length; i++) {
-            if (((Boolean) data[i][BREAK_COLUMN]).booleanValue()) {
+            if ((Boolean) data[i][BREAK_COLUMN]) {
                 breakpoints[breakpointCount++] = intAddresses[i];
             }
         }
@@ -459,7 +459,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
      */
     public void clearAllBreakpoints() {
         for (int i = 0; i < tableModel.getRowCount(); i++) {
-            if (((Boolean) data[i][BREAK_COLUMN]).booleanValue()) {
+            if ((Boolean) data[i][BREAK_COLUMN]) {
                 // must use this method to assure display updated and listener notified
                 tableModel.setValueAt(Boolean.FALSE, i, BREAK_COLUMN);
             }
@@ -668,7 +668,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
     private int findRowForAddress(int address) throws IllegalArgumentException {
         int addressRow = 0;
         try {
-            addressRow = ((Integer) addressRows.get(new Integer(address))).intValue();
+            addressRow = (Integer) addressRows.get(address);
         } catch (NullPointerException e) {
             throw new IllegalArgumentException(); // address not found in map
             //return addressRow;// if address not in map, do nothing.

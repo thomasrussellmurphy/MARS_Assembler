@@ -289,7 +289,7 @@ public class Simulator extends Observable {
                 this.done = true;
                 SystemIO.resetFiles(); // close any files opened in MIPS program
                 Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                return new Boolean(done);
+                return done;
             }
             int steps = 0;
 
@@ -358,7 +358,7 @@ public class Simulator extends Observable {
                             this.done = true;
                             SystemIO.resetFiles(); // close any files opened in MIPS program
                             Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                            return new Boolean(done); // execution completed without error.
+                            return done; // execution completed without error.
                         } else {
                             // See if an exception handler is present.  Assume this is the case
                             // if and only if memory location Memory.exceptionHandlerAddress
@@ -378,7 +378,7 @@ public class Simulator extends Observable {
                                 this.done = true;
                                 SystemIO.resetFiles(); // close any files opened in MIPS program
                                 Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                                return new Boolean(done);
+                                return done;
                             }
                         }
                     }
@@ -398,7 +398,7 @@ public class Simulator extends Observable {
                     this.constructReturnReason = PAUSE_OR_STOP;
                     this.done = false;
                     Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                    return new Boolean(done);
+                    return done;
                 }
                 //	Return if we've reached a breakpoint.					
                 if ((breakPoints != null) &&
@@ -406,7 +406,7 @@ public class Simulator extends Observable {
                     this.constructReturnReason = BREAKPOINT;
                     this.done = false;
                     Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                    return new Boolean(done); // false;
+                    return done; // false;
                 }
                 // Check number of MIPS instructions executed.  Return if at limit (-1 is no limit).
                 if (maxSteps > 0) {
@@ -415,7 +415,7 @@ public class Simulator extends Observable {
                         this.constructReturnReason = MAX_STEPS;
                         this.done = false;
                         Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                        return new Boolean(done);// false;
+                        return done;// false;
                     }
                 }
 
@@ -455,7 +455,7 @@ public class Simulator extends Observable {
                     this.done = true;
                     SystemIO.resetFiles(); // close any files opened in MIPS program
                     Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-                    return new Boolean(done);
+                    return done;
                 }
             }
             // DPS July 2007.  This "if" statement is needed for correct program
@@ -472,7 +472,7 @@ public class Simulator extends Observable {
             this.done = true;
             SystemIO.resetFiles(); // close any files opened in MIPS program
             Simulator.getInstance().notifyObserversOfExecutionStop(maxSteps, pc);
-            return new Boolean(done); // true;  // execution completed
+            return done; // true;  // execution completed
         }
 
 

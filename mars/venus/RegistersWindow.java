@@ -91,7 +91,7 @@ public class RegistersWindow extends JPanel implements Observer {
         registers = RegisterFile.getRegisters();
         for (int i = 0; i < registers.length; i++) {
             tableData[i][0] = registers[i].getName();
-            tableData[i][1] = new Integer(registers[i].getNumber());
+            tableData[i][1] = registers[i].getNumber();
             tableData[i][2] = NumberDisplayBaseChooser.formatNumber(registers[i].getValue(), valueBase);
         }
         tableData[32][0] = "pc";
