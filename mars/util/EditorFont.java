@@ -1,10 +1,9 @@
 package mars.util;
 
-import mars.*;
+import mars.Globals;
 
 import java.awt.*;
-import java.util.*;
-import java.awt.Font;
+import java.util.Arrays;
 	
 	/*
 Copyright (c) 2003-2009,  Pete Sanderson and Kenneth Vollmar

@@ -11,19 +11,24 @@ package mars.venus.editors.jeditsyntax;
 
 import mars.Globals;
 import mars.Settings;
-import mars.venus.editors.jeditsyntax.tokenmarker.*;
+import mars.venus.editors.jeditsyntax.tokenmarker.Token;
+import mars.venus.editors.jeditsyntax.tokenmarker.TokenMarker;
 
+import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
-import javax.swing.undo.*;
-import javax.swing.*;
-import javax.swing.plaf.basic.BasicMenuItemUI;
-import java.awt.datatransfer.*;
-import java.awt.event.*;
+import javax.swing.undo.AbstractUndoableEdit;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoableEdit;
 import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Vector;
-import java.util.ArrayList;
 
 /**
  * jEdit's text area component. It is more suited for editing program

@@ -1,19 +1,19 @@
 package mars.tools;
 
-import mars.*;
-import mars.util.*;
-import mars.assembler.*;
-import mars.mips.instructions.*;
-import mars.mips.hardware.*;
+import mars.Globals;
+import mars.mips.hardware.AccessNotice;
+import mars.mips.hardware.Coprocessor1;
+import mars.mips.hardware.Register;
+import mars.util.Binary;
 
-import java.util.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.border.*;
-import javax.swing.text.html.*;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.Observable;
 	
 	/*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

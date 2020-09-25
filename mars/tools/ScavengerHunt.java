@@ -1,15 +1,20 @@
 package mars.tools;
 
-import mars.*;
-import mars.mips.hardware.*;
+import mars.Globals;
+import mars.mips.hardware.AccessNotice;
+import mars.mips.hardware.AddressErrorException;
+import mars.mips.hardware.MemoryAccessNotice;
+import mars.util.Binary;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
-import javax.swing.JOptionPane;
-
-import mars.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Random;
 
 /**
  * Demo of Mars tool capability.    Ken Vollmar, 27 Oct 2006  KenVollmar@missouristate.edu

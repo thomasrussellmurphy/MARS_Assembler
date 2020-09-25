@@ -1,11 +1,11 @@
 package mars.mips.hardware;
 
-import java.util.Observer;
-
 import mars.Globals;
 import mars.assembler.SymbolTable;
 import mars.mips.instructions.Instruction;
 import mars.util.Binary;
+
+import java.util.Observer;
 
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar

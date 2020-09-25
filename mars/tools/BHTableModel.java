@@ -27,9 +27,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package mars.tools;//.bhtsim;
 
-import java.util.Vector;
-
 import javax.swing.table.AbstractTableModel;
+import java.util.Vector;
 
 /**
  * Simulates the actual functionality of a Branch History Table (BHT).

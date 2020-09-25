@@ -1,10 +1,9 @@
 package mars.util;
 
-import mars.*;
+import mars.Globals;
+import mars.Settings;
 
 import java.io.*;
-import javax.swing.*;
-import java.util.*;
 	
 	/*
 Copyright (c) 2003-2013,  Pete Sanderson and Kenneth Vollmar

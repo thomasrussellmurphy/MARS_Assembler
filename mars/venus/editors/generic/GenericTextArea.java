@@ -4,11 +4,16 @@ import mars.Globals;
 import mars.venus.EditPane;
 import mars.venus.editors.MARSTextEditingArea;
 
-import java.awt.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.undo.*;
-import java.util.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.CompoundEdit;
+import javax.swing.undo.UndoManager;
+import java.awt.*;
 
 /*
 Copyright (c) 2003-2010,  Pete Sanderson and Kenneth Vollmar

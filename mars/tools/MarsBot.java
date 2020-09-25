@@ -1,13 +1,16 @@
 package mars.tools;
 
-import mars.*;
-import mars.mips.hardware.*;
-import mars.venus.*;
+import mars.Globals;
+import mars.mips.hardware.AccessNotice;
+import mars.mips.hardware.AddressErrorException;
+import mars.mips.hardware.MemoryAccessNotice;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Simple Demo of Mars tool capability

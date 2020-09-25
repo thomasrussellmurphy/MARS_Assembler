@@ -1,8 +1,10 @@
 package mars.mips.instructions.syscalls;
 
-import mars.util.*;
-import mars.mips.hardware.*;
-import mars.*;
+import mars.ProcessingException;
+import mars.ProgramStatement;
+import mars.mips.hardware.RegisterFile;
+import mars.util.Binary;
+import mars.util.SystemIO;
 
 /*
 Copyright (c) 2003-2009,  Pete Sanderson and Kenneth Vollmar

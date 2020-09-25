@@ -9,12 +9,17 @@
 
 package mars.venus.editors.jeditsyntax.tokenmarker;
 
-import mars.venus.editors.jeditsyntax.*;
-import mars.mips.instructions.*;
-import mars.assembler.*;
+import mars.assembler.Directives;
+import mars.mips.instructions.BasicInstruction;
+import mars.mips.instructions.Instruction;
+import mars.venus.editors.jeditsyntax.KeywordMap;
+import mars.venus.editors.jeditsyntax.PopupHelpItem;
 
 import javax.swing.text.Segment;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeSet;
 
 /**
  * MIPS token marker.

@@ -1,8 +1,9 @@
 package mars.mips.dump;
 
-import mars.mips.hardware.*;
+import mars.mips.hardware.AddressErrorException;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar
 

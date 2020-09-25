@@ -1,9 +1,11 @@
 package mars.mips.hardware;
 
-import mars.*;
-import mars.util.*;
-import mars.simulator.*;
-import mars.mips.instructions.*;
+import mars.Globals;
+import mars.ProgramStatement;
+import mars.Settings;
+import mars.mips.instructions.Instruction;
+import mars.simulator.Exceptions;
+import mars.util.Binary;
 
 import java.util.*;
 	

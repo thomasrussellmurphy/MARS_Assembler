@@ -1,9 +1,13 @@
 package mars.mips.dump;
 
 import mars.Globals;
-import mars.mips.hardware.*;
+import mars.mips.hardware.AddressErrorException;
+import mars.mips.hardware.Memory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 
 /**
  * Intel's Hex memory initialization format

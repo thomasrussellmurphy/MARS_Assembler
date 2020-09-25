@@ -1,21 +1,23 @@
 package mars.tools;
 
-import mars.util.Binary;
-import mars.venus.*;
-
-import javax.swing.*;
-import javax.swing.border.*;
-import javax.swing.event.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-
 import mars.Globals;
-import mars.venus.RunSpeedPanel;
 import mars.mips.hardware.*;
 import mars.simulator.Exceptions;
+import mars.util.Binary;
+import mars.venus.AbstractFontSettingDialog;
 
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultCaret;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Arrays;
+import java.util.Observable;
+import java.util.Random;
 
 
 /*

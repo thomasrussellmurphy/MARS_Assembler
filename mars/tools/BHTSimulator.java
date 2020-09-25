@@ -27,18 +27,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package mars.tools;
 
+import mars.ProgramStatement;
+import mars.mips.hardware.*;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
-
-import javax.swing.JComponent;
-
-import mars.ProgramStatement;
-import mars.mips.hardware.AccessNotice;
-import mars.mips.hardware.AddressErrorException;
-import mars.mips.hardware.Memory;
-import mars.mips.hardware.MemoryAccessNotice;
-import mars.mips.hardware.RegisterFile;
 //import mars.tools.bhtsim.BHTSimGUI;
 //import mars.tools.bhtsim.BHTableModel;
 

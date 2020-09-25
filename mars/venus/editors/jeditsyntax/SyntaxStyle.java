@@ -10,7 +10,6 @@
 package mars.venus.editors.jeditsyntax;
 
 import java.awt.*;
-import java.util.StringTokenizer;
 
 /**
  * A simple text style class. It can specify the color, italic flag,

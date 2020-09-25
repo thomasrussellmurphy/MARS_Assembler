@@ -1,10 +1,9 @@
 package mars.mips.dump;
 
-import mars.*;
-import mars.util.*;
+import mars.util.FilenameFinder;
 
-import java.util.*;
-import java.lang.reflect.*;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar

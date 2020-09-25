@@ -9,13 +9,15 @@
 
 package mars.venus.editors.jeditsyntax;
 
-import mars.venus.editors.jeditsyntax.tokenmarker.*;
 import mars.Globals;
+import mars.venus.editors.jeditsyntax.tokenmarker.Token;
 
-import javax.swing.text.*;
 import javax.swing.*;
+import javax.swing.text.Segment;
+import javax.swing.text.TabExpander;
+import javax.swing.text.Utilities;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseEvent;
 
 /**
  * Class with several utility functions used by jEdit's syntax colorizing

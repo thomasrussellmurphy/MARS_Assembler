@@ -2,10 +2,14 @@ package mars.mips.dump;
 
 import mars.Globals;
 import mars.ProgramStatement;
+import mars.mips.hardware.AddressErrorException;
+import mars.mips.hardware.Memory;
 import mars.util.Binary;
-import mars.mips.hardware.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar
 

@@ -1,9 +1,9 @@
 package mars.mips.instructions.syscalls;
 
-import mars.util.*;
-import mars.mips.hardware.*;
-import mars.simulator.*;
-import mars.*;
+import mars.ProcessingException;
+import mars.ProgramStatement;
+import mars.mips.hardware.RegisterFile;
+import mars.simulator.Exceptions;
 
 import java.util.Random;
 

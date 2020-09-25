@@ -2,7 +2,7 @@ package mars.mips.hardware;
 
 import mars.Globals;
 
-import java.util.*;
+import java.util.Observer;
 
 /*
 Copyright (c) 2003-2009,  Pete Sanderson and Kenneth Vollmar

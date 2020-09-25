@@ -1,9 +1,10 @@
 package mars.mips.instructions;
 
-import mars.assembler.*;
-import mars.*;
+import mars.ProcessingException;
+import mars.assembler.TokenList;
+import mars.assembler.Tokenizer;
 
-import java.util.*;
+import java.util.StringTokenizer;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

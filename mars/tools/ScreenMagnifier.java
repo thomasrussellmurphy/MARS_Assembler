@@ -1,13 +1,13 @@
 package mars.tools;
 
-import java.text.*;
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.*;
-import java.awt.geom.*;
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.border.*;
+import java.awt.geom.Line2D;
+import java.awt.image.BufferedImage;
 	
 	/*
 Copyright (c) 2003-2007,  Pete Sanderson and Kenneth Vollmar

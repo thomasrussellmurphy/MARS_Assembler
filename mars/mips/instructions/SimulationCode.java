@@ -1,6 +1,7 @@
 package mars.mips.instructions;
 
-import mars.*;
+import mars.ProcessingException;
+import mars.ProgramStatement;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

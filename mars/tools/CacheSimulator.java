@@ -1,14 +1,20 @@
 package mars.tools;
 
-import javax.swing.*;
-import javax.swing.border.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import mars.mips.hardware.AccessNotice;
+import mars.mips.hardware.Memory;
+import mars.mips.hardware.MemoryAccessNotice;
+import mars.util.Binary;
 
-import mars.util.*;
-import mars.tools.*;
-import mars.mips.hardware.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.Observable;
+import java.util.Random;
 
 /*
 Copyright (c) 2003-2011,  Pete Sanderson and Kenneth Vollmar

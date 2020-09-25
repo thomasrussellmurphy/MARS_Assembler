@@ -2,7 +2,7 @@ package mars.util;
 
 import mars.Globals;
 
-import java.util.*;
+import java.util.Arrays;
 	
 	/*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

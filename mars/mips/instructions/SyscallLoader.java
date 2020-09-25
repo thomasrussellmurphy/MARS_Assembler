@@ -1,10 +1,12 @@
 package mars.mips.instructions;
 
-import mars.mips.instructions.syscalls.*;
-import mars.*;
-import mars.util.*;
+import mars.Globals;
+import mars.mips.instructions.syscalls.Syscall;
+import mars.mips.instructions.syscalls.SyscallNumberOverride;
+import mars.util.FilenameFinder;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /*
 Copyright (c) 2003-2006,  Pete Sanderson and Kenneth Vollmar

@@ -9,11 +9,16 @@
 
 package mars.venus.editors.jeditsyntax;
 
-import javax.swing.text.*;
-import javax.swing.JPopupMenu;
-import java.awt.event.*;
-import java.awt.Component;
-import java.util.*;
+import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.Enumeration;
+import java.util.EventObject;
+import java.util.Hashtable;
 
 /**
  * An input handler converts the user's key strokes into concrete actions.

@@ -1,17 +1,21 @@
 package mars.tools;
 
+import mars.Globals;
+import mars.MIPSprogram;
+import mars.mips.hardware.*;
+import mars.util.FilenameFinder;
+
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
-import java.io.*;
-
-import mars.*;
-import mars.util.*;
-import mars.tools.*;
-import mars.mips.hardware.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar

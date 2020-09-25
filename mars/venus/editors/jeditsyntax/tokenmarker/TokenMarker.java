@@ -10,7 +10,7 @@
  package mars.venus.editors.jeditsyntax.tokenmarker;
 
  import javax.swing.text.Segment;
- import java.util.*;
+ import java.util.ArrayList;
 
  /**
   * A token marker that splits lines of text into tokens. Each token carries

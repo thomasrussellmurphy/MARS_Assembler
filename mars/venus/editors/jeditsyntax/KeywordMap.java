@@ -10,7 +10,7 @@
 
 package mars.venus.editors.jeditsyntax;
 
-import mars.venus.editors.jeditsyntax.tokenmarker.*;
+import mars.venus.editors.jeditsyntax.tokenmarker.Token;
 
 import javax.swing.text.Segment;
 

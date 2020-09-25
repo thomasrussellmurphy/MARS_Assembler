@@ -3,10 +3,10 @@ package mars.mips.instructions.syscalls;
 
 
 import javax.sound.midi.*;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /*
 Copyright (c) 2003-2007,  Pete Sanderson and Kenneth Vollmar

@@ -1,11 +1,13 @@
 package mars.mips.instructions.syscalls;
 
-import mars.util.*;
-import mars.mips.hardware.*;
-import mars.simulator.*;
-import mars.*;
+import mars.Globals;
+import mars.ProcessingException;
+import mars.ProgramStatement;
+import mars.mips.hardware.AddressErrorException;
+import mars.mips.hardware.Coprocessor1;
+import mars.mips.hardware.RegisterFile;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /*
 Copyright (c) 2003-2008,  Pete Sanderson and Kenneth Vollmar
