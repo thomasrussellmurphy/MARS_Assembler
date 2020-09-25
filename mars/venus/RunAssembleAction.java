@@ -80,12 +80,12 @@ public class RunAssembleAction extends GuiAction {
             }
             try {
                 Globals.program = new MIPSprogram();
-                ArrayList filesToAssemble;
+                ArrayList<String> filesToAssemble;
                 if (Globals.getSettings().getAssembleAllEnabled()) {// setting calls for multiple file assembly 
                     filesToAssemble = FilenameFinder.getFilenameList(
                             new File(FileStatus.getName()).getParent(), Globals.fileExtensions);
                 } else {
-                    filesToAssemble = new ArrayList();
+                    filesToAssemble = new ArrayList<>();
                     filesToAssemble.add(FileStatus.getName());
                 }
                 String exceptionHandler = null;

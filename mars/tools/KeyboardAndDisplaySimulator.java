@@ -116,7 +116,7 @@ public class KeyboardAndDisplaySimulator extends AbstractMarsToolAndApplication 
     private JScrollPane displayScrollPane;
     private JTextArea display;
     private JPanel displayPanel, displayOptions;
-    private JComboBox delayTechniqueChooser;
+    private JComboBox<TransmitterDelayTechnique> delayTechniqueChooser;
     private DelayLengthPanel delayLengthPanel;
     private JSlider delayLengthSlider;
     private JCheckBox displayAfterDelayCheckBox;
@@ -639,7 +639,7 @@ public class KeyboardAndDisplaySimulator extends AbstractMarsToolAndApplication 
 
         displayPanel.add(displayScrollPane);
         displayOptions = new JPanel();
-        delayTechniqueChooser = new JComboBox(delayTechniques);
+        delayTechniqueChooser = new JComboBox<>(delayTechniques);
         delayTechniqueChooser.setToolTipText("Technique for determining simulated transmitter device processing delay");
         delayTechniqueChooser.addActionListener(
                 new ActionListener() {

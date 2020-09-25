@@ -51,7 +51,7 @@ public class LabelsWindow extends JInternalFrame {
     private Container contentPane;
     private JPanel labelPanel;      // holds J
     private JCheckBox dataLabels, textLabels;
-    private ArrayList listOfLabelsForSymbolTable;
+    private ArrayList<LabelsForSymbolTable> listOfLabelsForSymbolTable;
     private LabelsWindow labelsWindow;
     private static final int MAX_DISPLAYED_CHARS = 24;
     private static final int PREFERRED_NAME_COLUMN_WIDTH = 60;
@@ -63,7 +63,7 @@ public class LabelsWindow extends JInternalFrame {
             /* ADDRESS_COLUMN */ "Text or data segment address at which label is defined."
     };
     private static String[] columnNames;
-    private Comparator tableSortComparator;
+    private Comparator<Symbol> tableSortComparator;
 
     /////////////////////////////////////////////////////////////////////////////////////
     // Use 8-state machine to track sort status for displaying tables
@@ -165,7 +165,7 @@ public class LabelsWindow extends JInternalFrame {
 
     //
     private JScrollPane generateLabelScrollPane() {
-        listOfLabelsForSymbolTable = new ArrayList();
+        listOfLabelsForSymbolTable = new ArrayList<>();
         listOfLabelsForSymbolTable.add(new LabelsForSymbolTable(null));// global symtab
         ArrayList MIPSprogramsAssembled = RunAssembleAction.getMIPSprogramsToAssemble();
         Box allSymtabTables = Box.createVerticalBox();
@@ -173,7 +173,7 @@ public class LabelsWindow extends JInternalFrame {
             listOfLabelsForSymbolTable.add(new LabelsForSymbolTable(
                     (MIPSprogram) MIPSprogramsAssembled.get(i)));
         }
-        ArrayList tableNames = new ArrayList();
+        ArrayList<Box> tableNames = new ArrayList<>();
         JTableHeader tableHeader = null;
         for (int i = 0; i < listOfLabelsForSymbolTable.size(); i++) {
             LabelsForSymbolTable symtab = (LabelsForSymbolTable) listOfLabelsForSymbolTable.get(i);
@@ -287,7 +287,7 @@ public class LabelsWindow extends JInternalFrame {
         private MIPSprogram myMIPSprogram;
         private Object[][] labelData;
         private JTable labelTable;
-        private ArrayList symbols;
+        private ArrayList<Symbol> symbols;
         private SymbolTable symbolTable;
         private String tableName;
 
@@ -325,7 +325,7 @@ public class LabelsWindow extends JInternalFrame {
             } else if (!textLabels.isSelected() && dataLabels.isSelected()) {
                 symbols = symbolTable.getDataSymbols();
             } else {
-                symbols = new ArrayList();
+                symbols = new ArrayList<>();
             }
             Collections.sort(symbols, tableSortComparator); // DPS 25 Dec 2008
             labelData = new Object[symbols.size()][2];
@@ -546,6 +546,8 @@ public class LabelsWindow extends JInternalFrame {
         private DescendingComparator(Comparator opposite) {
             this.opposite = opposite;
         }
+
+
 
         public int compare(Object a, Object b) {
             return opposite.compare(b, a);

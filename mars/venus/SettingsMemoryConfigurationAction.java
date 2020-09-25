@@ -262,7 +262,7 @@ public class SettingsMemoryConfigurationAction extends GuiAction {
             // results.  There can be duplicate addresses, so I concatenate the name
             // onto the address to make each key unique.  Then slice off the name upon
             // extraction.
-            TreeMap treeSortedByAddress = new TreeMap();
+            TreeMap<String, String> treeSortedByAddress = new TreeMap<>();
             for (int i = 0; i < configurationItemValues.length; i++) {
                 treeSortedByAddress.put(Binary.intToHexString(configurationItemValues[i]) + configurationItemNames[i], configurationItemNames[i]);
             }

@@ -56,7 +56,7 @@ import mars.util.SystemIO;
  **/
 
 public class Assembler {
-    private ArrayList machineList;
+    private ArrayList<ProgramStatement> machineList;
     private ErrorList errors;
     private boolean inDataSegment; // status maintained by parser
     private boolean inMacroSegment; // status maintained by parser, true if in
@@ -111,7 +111,7 @@ public class Assembler {
      **/
     public ArrayList assemble(MIPSprogram p, boolean extendedAssemblerEnabled,
                               boolean warningsAreErrors) throws ProcessingException {
-        ArrayList programFiles = new ArrayList();
+        ArrayList<MIPSprogram> programFiles = new ArrayList<>();
         programFiles.add(p);
         return this.assemble(programFiles, extendedAssemblerEnabled, warningsAreErrors);
     }
@@ -179,7 +179,7 @@ public class Assembler {
         accumulatedDataSegmentForwardReferences = new DataSegmentForwardReferences();
         Globals.symbolTable.clear();
         Globals.memory.clear();
-        this.machineList = new ArrayList();
+        this.machineList = new ArrayList<>();
         this.errors = new ErrorList();
         if (Globals.debug)
             System.out.println("Assembler first pass begins:");
@@ -210,7 +210,7 @@ public class Assembler {
             // each ArrayList in tokenList consists of Token objects.
             ArrayList<SourceLine> sourceLineList = fileCurrentlyBeingAssembled.getSourceLineList();
             ArrayList tokenList = fileCurrentlyBeingAssembled.getTokenList();
-            ArrayList parsedList = fileCurrentlyBeingAssembled.createParsedList();
+            ArrayList<ProgramStatement> parsedList = fileCurrentlyBeingAssembled.createParsedList();
             // each file keeps its own macro definitions
             MacroPool macroPool = fileCurrentlyBeingAssembled.createMacroPool();
             // FIRST PASS OF ASSEMBLER VERIFIES SYNTAX, GENERATES SYMBOL TABLE,
@@ -1295,13 +1295,13 @@ public class Assembler {
     // ProgramStatements.
     // Sorting is based on unsigned integer value of
     // ProgramStatement.getAddress()
-    private class ProgramStatementComparator implements Comparator {
+    private class ProgramStatementComparator implements Comparator<ProgramStatement> {
         // Will be used to sort the collection. Unsigned int compare, because
         // all kernel 32-bit
         // addresses have 1 in high order bit, which makes the int negative.
         // "Unsigned" compare
         // is needed when signs of the two operands differ.
-        public int compare(Object obj1, Object obj2) {
+        public int compare(ProgramStatement obj1, ProgramStatement obj2) {
             if (obj1 instanceof ProgramStatement && obj2 instanceof ProgramStatement) {
                 int addr1 = ((ProgramStatement) obj1).getAddress();
                 int addr2 = ((ProgramStatement) obj2).getAddress();
@@ -1372,10 +1372,10 @@ public class Assembler {
     // the integer directives: .word, .half, .byte)
     // - the label's token. Normally need only the name but error message needs more.
     private class DataSegmentForwardReferences {
-        private ArrayList forwardReferenceList;
+        private ArrayList<DataSegmentForwardReference> forwardReferenceList;
 
         private DataSegmentForwardReferences() {
-            forwardReferenceList = new ArrayList();
+            forwardReferenceList = new ArrayList<>();
         }
 
         private int size() {

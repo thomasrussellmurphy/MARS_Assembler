@@ -27,7 +27,7 @@ public class DefaultInputHandler extends InputHandler {
      * Creates a new input handler with no key bindings defined.
      */
     public DefaultInputHandler() {
-        bindings = currentBindings = new Hashtable();
+        bindings = currentBindings = new Hashtable<>();
     }
 
     /**
@@ -92,7 +92,7 @@ public class DefaultInputHandler extends InputHandler {
      * @param action     The action
      */
     public void addKeyBinding(String keyBinding, ActionListener action) {
-        Hashtable current = bindings;
+        Hashtable<KeyStroke, Object> current = bindings;
 
         StringTokenizer st = new StringTokenizer(keyBinding);
         while (st.hasMoreTokens()) {
@@ -102,9 +102,9 @@ public class DefaultInputHandler extends InputHandler {
 
             if (st.hasMoreTokens()) {
                 Object o = current.get(keyStroke);
-                if (o instanceof Hashtable)
+                if (o instanceof Hashtable) {
                     current = (Hashtable) o;
-                else {
+                } else {
                     o = new Hashtable();
                     current.put(keyStroke, o);
                     current = (Hashtable) o;
@@ -351,8 +351,8 @@ public class DefaultInputHandler extends InputHandler {
     }
 
     // private members
-    private Hashtable bindings;
-    private Hashtable currentBindings;
+    private Hashtable<KeyStroke, Object> bindings;
+    private Hashtable<KeyStroke, Object> currentBindings;
 
     private DefaultInputHandler(DefaultInputHandler copy) {
         bindings = currentBindings = copy.bindings;

@@ -59,7 +59,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
 public class InstructionSet {
-    private ArrayList instructionList;
+    private ArrayList<Instruction> instructionList;
     private ArrayList opcodeMatchMaps;
     private SyscallLoader syscallLoader;
 
@@ -67,7 +67,7 @@ public class InstructionSet {
      * Creates a new InstructionSet object.
      */
     public InstructionSet() {
-        instructionList = new ArrayList();
+        instructionList = new ArrayList<>();
 
     }
 
@@ -2682,17 +2682,17 @@ public class InstructionSet {
             inst.createExampleTokenList();
         }
 
-        HashMap maskMap = new HashMap();
-        ArrayList matchMaps = new ArrayList();
+        HashMap<Integer, HashMap<Integer, BasicInstruction>> maskMap = new HashMap<>();
+        ArrayList<MatchMap> matchMaps = new ArrayList<>();
         for (int i = 0; i < instructionList.size(); i++) {
             Object rawInstr = instructionList.get(i);
             if (rawInstr instanceof BasicInstruction) {
                 BasicInstruction basic = (BasicInstruction) rawInstr;
                 Integer mask = basic.getOpcodeMask();
                 Integer match = basic.getOpcodeMatch();
-                HashMap matchMap = (HashMap) maskMap.get(mask);
+                HashMap<Integer, BasicInstruction> matchMap = maskMap.get(mask);
                 if (matchMap == null) {
-                    matchMap = new HashMap();
+                    matchMap = new HashMap<>();
                     maskMap.put(mask, matchMap);
                     matchMaps.add(new MatchMap(mask, matchMap));
                 }
@@ -2786,13 +2786,13 @@ public class InstructionSet {
      * @param name operator mnemonic (e.g. addi, sw,...)
      * @return list of corresponding Instruction object(s), or null if not found.
      */
-    public ArrayList matchOperator(String name) {
-        ArrayList matchingInstructions = null;
+    public ArrayList<Instruction> matchOperator(String name) {
+        ArrayList<Instruction> matchingInstructions = null;
         // Linear search for now....
         for (int i = 0; i < instructionList.size(); i++) {
             if (((Instruction) instructionList.get(i)).getName().equalsIgnoreCase(name)) {
                 if (matchingInstructions == null)
-                    matchingInstructions = new ArrayList();
+                    matchingInstructions = new ArrayList<>();
                 matchingInstructions.add(instructionList.get(i));
             }
         }
@@ -2808,14 +2808,14 @@ public class InstructionSet {
      * @param name a string
      * @return list of matching Instruction object(s), or null if none match.
      */
-    public ArrayList prefixMatchOperator(String name) {
-        ArrayList matchingInstructions = null;
+    public ArrayList<Instruction> prefixMatchOperator(String name) {
+        ArrayList<Instruction> matchingInstructions = null;
         // Linear search for now....
         if (name != null) {
             for (int i = 0; i < instructionList.size(); i++) {
                 if (((Instruction) instructionList.get(i)).getName().toLowerCase().startsWith(name.toLowerCase())) {
                     if (matchingInstructions == null)
-                        matchingInstructions = new ArrayList();
+                        matchingInstructions = new ArrayList<>();
                     matchingInstructions.add(instructionList.get(i));
                 }
             }
@@ -2905,7 +2905,7 @@ public class InstructionSet {
                         Instruction.INSTRUCTION_LENGTH : 0));
     }
 
-    private static class MatchMap implements Comparable {
+    private static class MatchMap implements Comparable<MatchMap> {
         private int mask;
         private int maskLength; // number of 1 bits in mask
         private HashMap matchMap;
@@ -2927,10 +2927,9 @@ public class InstructionSet {
             return o instanceof MatchMap && mask == ((MatchMap) o).mask;
         }
 
-        public int compareTo(Object other) {
-            MatchMap o = (MatchMap) other;
-            int d = o.maskLength - this.maskLength;
-            if (d == 0) d = this.mask - o.mask;
+        public int compareTo(MatchMap other) {
+            int d = other.maskLength - this.maskLength;
+            if (d == 0) d = this.mask - other.mask;
             return d;
         }
 

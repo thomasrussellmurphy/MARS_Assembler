@@ -43,7 +43,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 public abstract class AbstractFontSettingDialog extends JDialog {
 
     JDialog editorDialog;
-    JComboBox fontFamilySelector, fontStyleSelector;
+    JComboBox<String> fontFamilySelector, fontStyleSelector;
     JSlider fontSizeSelector;
     JSpinner fontSizeSpinSelector;
     JLabel fontSample;
@@ -91,7 +91,7 @@ public abstract class AbstractFontSettingDialog extends JDialog {
         // with a horizontal line separating the two groups.
         String[][] fullList = {commonFontFamilies, allFontFamilies};
 
-        fontFamilySelector = new JComboBox(makeVectorData(fullList));
+        fontFamilySelector = new JComboBox<>(makeVectorData(fullList));
         fontFamilySelector.setRenderer(new ComboBoxRenderer());
         fontFamilySelector.addActionListener(new BlockComboListener(fontFamilySelector));
         fontFamilySelector.setSelectedItem(currentFont.getFamily());
@@ -100,7 +100,7 @@ public abstract class AbstractFontSettingDialog extends JDialog {
         fontFamilySelector.setToolTipText("Short list of common font families followed by complete list.");
 
         String[] fontStyles = EditorFont.getFontStyleStrings();
-        fontStyleSelector = new JComboBox(fontStyles);
+        fontStyleSelector = new JComboBox<>(fontStyles);
         fontStyleSelector.setSelectedItem(EditorFont.styleIntToStyleString(currentFont.getStyle()));
         fontStyleSelector.setEditable(false);
         fontStyleSelector.setToolTipText("List of available font styles.");
@@ -215,9 +215,9 @@ public abstract class AbstractFontSettingDialog extends JDialog {
 
     // Given an array of string arrays, will produce a Vector contenating
     // the arrays with a separator between each.
-    private Vector makeVectorData(String[][] str) {
+    private Vector<String> makeVectorData(String[][] str) {
         boolean needSeparator = false;
-        Vector data = new Vector();
+        Vector<String> data = new Vector<>();
         for (int i = 0; i < str.length; i++) {
             if (needSeparator) {
                 data.addElement(SEPARATOR);

@@ -51,9 +51,9 @@ public class MIPSprogram {
     private boolean steppedExecution = false;
 
     private String filename;
-    private ArrayList sourceList;
+    private ArrayList<String> sourceList;
     private ArrayList tokenList;
-    private ArrayList parsedList;
+    private ArrayList<ProgramStatement> parsedList;
     private ArrayList machineList;
     private BackStepper backStepper;
     private SymbolTable localSymbolTable;
@@ -80,7 +80,7 @@ public class MIPSprogram {
 
     public void setSourceLineList(ArrayList<SourceLine> sourceLineList) {
         this.sourceLineList = sourceLineList;
-        sourceList = new ArrayList();
+        sourceList = new ArrayList<>();
         for (SourceLine sl : sourceLineList) {
             sourceList.add(sl.getSource());
         }
@@ -137,8 +137,8 @@ public class MIPSprogram {
      * @see ProgramStatement
      **/
 
-    public ArrayList createParsedList() {
-        parsedList = new ArrayList();
+    public ArrayList<ProgramStatement> createParsedList() {
+        parsedList = new ArrayList<>();
         return parsedList;
     }
 
@@ -223,7 +223,7 @@ public class MIPSprogram {
 
     public void readSource(String file) throws ProcessingException {
         this.filename = file;
-        this.sourceList = new ArrayList();
+        this.sourceList = new ArrayList<>();
         ErrorList errors = null;
         BufferedReader inputFile;
         String line;
@@ -272,8 +272,8 @@ public class MIPSprogram {
      * @throws ProcessingException Will throw exception if errors occured while reading or tokenizing.
      **/
 
-    public ArrayList prepareFilesForAssembly(ArrayList filenames, String leadFilename, String exceptionHandler) throws ProcessingException {
-        ArrayList MIPSprogramsToAssemble = new ArrayList();
+    public ArrayList prepareFilesForAssembly(ArrayList<String> filenames, String leadFilename, String exceptionHandler) throws ProcessingException {
+        ArrayList<MIPSprogram> MIPSprogramsToAssemble = new ArrayList<>();
         int leadFilePosition = 0;
         if (exceptionHandler != null && exceptionHandler.length() > 0) {
             filenames.add(0, exceptionHandler);

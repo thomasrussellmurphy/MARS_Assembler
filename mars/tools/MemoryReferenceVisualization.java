@@ -312,7 +312,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         updateDisplay();
                     }
                 });
-        wordsPerUnitSelector = new JComboBox(wordsPerUnitChoices);
+        wordsPerUnitSelector = new JComboBox<>(wordsPerUnitChoices);
         wordsPerUnitSelector.setEditable(false);
         wordsPerUnitSelector.setBackground(backgroundColor);
         wordsPerUnitSelector.setSelectedIndex(defaultWordsPerUnitIndex);
@@ -324,7 +324,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         reset();
                     }
                 });
-        visualizationUnitPixelWidthSelector = new JComboBox(visualizationUnitPixelWidthChoices);
+        visualizationUnitPixelWidthSelector = new JComboBox<>(visualizationUnitPixelWidthChoices);
         visualizationUnitPixelWidthSelector.setEditable(false);
         visualizationUnitPixelWidthSelector.setBackground(backgroundColor);
         visualizationUnitPixelWidthSelector.setSelectedIndex(defaultVisualizationUnitPixelWidthIndex);
@@ -337,7 +337,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         updateDisplay();
                     }
                 });
-        visualizationUnitPixelHeightSelector = new JComboBox(visualizationUnitPixelHeightChoices);
+        visualizationUnitPixelHeightSelector = new JComboBox<>(visualizationUnitPixelHeightChoices);
         visualizationUnitPixelHeightSelector.setEditable(false);
         visualizationUnitPixelHeightSelector.setBackground(backgroundColor);
         visualizationUnitPixelHeightSelector.setSelectedIndex(defaultVisualizationUnitPixelHeightIndex);
@@ -350,7 +350,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         updateDisplay();
                     }
                 });
-        visualizationPixelWidthSelector = new JComboBox(displayAreaPixelWidthChoices);
+        visualizationPixelWidthSelector = new JComboBox<>(displayAreaPixelWidthChoices);
         visualizationPixelWidthSelector.setEditable(false);
         visualizationPixelWidthSelector.setBackground(backgroundColor);
         visualizationPixelWidthSelector.setSelectedIndex(defaultDisplayWidthIndex);
@@ -366,7 +366,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         updateDisplay();
                     }
                 });
-        visualizationPixelHeightSelector = new JComboBox(displayAreaPixelHeightChoices);
+        visualizationPixelHeightSelector = new JComboBox<>(displayAreaPixelHeightChoices);
         visualizationPixelHeightSelector.setEditable(false);
         visualizationPixelHeightSelector.setBackground(backgroundColor);
         visualizationPixelHeightSelector.setSelectedIndex(defaultDisplayHeightIndex);
@@ -382,7 +382,7 @@ public class MemoryReferenceVisualization extends AbstractMarsToolAndApplication
                         updateDisplay();
                     }
                 });
-        displayBaseAddressSelector = new JComboBox(displayBaseAddressChoices);
+        displayBaseAddressSelector = new JComboBox<>(displayBaseAddressChoices);
         displayBaseAddressSelector.setEditable(false);
         displayBaseAddressSelector.setBackground(backgroundColor);
         displayBaseAddressSelector.setSelectedIndex(defaultBaseAddressIndex);

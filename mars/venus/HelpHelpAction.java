@@ -279,7 +279,7 @@ public class HelpHelpAction extends GuiAction {
 
     /////////////////////////////////////////////////////////////////////////////
     private JScrollPane createMipsDirectivesHelpPane() {
-        Vector exampleList = new Vector();
+        Vector<String> exampleList = new Vector<>();
         String blanks = "            ";  // 12 blanks
         Directives direct;
         Iterator it = Directives.getDirectiveList().iterator();
@@ -290,7 +290,7 @@ public class HelpHelpAction extends GuiAction {
                     + direct.getDescription());
         }
         Collections.sort(exampleList);
-        JList examples = new JList(exampleList);
+        JList<String> examples = new JList<>(exampleList);
         JScrollPane mipsScrollPane = new JScrollPane(examples, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         examples.setFont(new Font("Monospaced", Font.PLAIN, 12));
@@ -300,7 +300,7 @@ public class HelpHelpAction extends GuiAction {
     ////////////////////////////////////////////////////////////////////////////
     private JScrollPane createMipsInstructionHelpPane(String instructionClassName) {
         ArrayList instructionList = Globals.instructionSet.getInstructionList();
-        Vector exampleList = new Vector(instructionList.size());
+        Vector<String> exampleList = new Vector<>(instructionList.size());
         Iterator it = instructionList.iterator();
         Instruction instr;
         String blanks = "                        ";  // 24 blanks
@@ -318,7 +318,7 @@ public class HelpHelpAction extends GuiAction {
             }
         }
         Collections.sort(exampleList);
-        JList examples = new JList(exampleList);
+        JList<String> examples = new JList<>(exampleList);
         JScrollPane mipsScrollPane = new JScrollPane(examples, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         examples.setFont(new Font("Monospaced", Font.PLAIN, 12));

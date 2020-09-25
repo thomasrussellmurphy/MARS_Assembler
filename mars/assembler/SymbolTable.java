@@ -42,7 +42,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 public class SymbolTable {
     private static String startLabel = "main";
     private String filename;
-    private ArrayList table;
+    private ArrayList<Symbol> table;
     // Note -1 is legal 32 bit address (0xFFFFFFFF) but it is the high address in
     // kernel address space so highly unlikely that any symbol will have this as
     // its associated address!
@@ -56,7 +56,7 @@ public class SymbolTable {
      */
     public SymbolTable(String filename) {
         this.filename = filename;
-        this.table = new ArrayList();
+        this.table = new ArrayList<>();
     }
 
     /**
@@ -189,8 +189,8 @@ public class SymbolTable {
      * @return An ArrayList of Symbol objects.
      **/
 
-    public ArrayList getDataSymbols() {
-        ArrayList list = new ArrayList();
+    public ArrayList<Symbol> getDataSymbols() {
+        ArrayList<Symbol> list = new ArrayList<>();
         for (int i = 0; i < table.size(); i++) {
             if (((Symbol) table.get(i)).getType()) {
                 list.add(table.get(i));
@@ -206,8 +206,8 @@ public class SymbolTable {
      * @return An ArrayList of Symbol objects.
      **/
 
-    public ArrayList getTextSymbols() {
-        ArrayList list = new ArrayList();
+    public ArrayList<Symbol> getTextSymbols() {
+        ArrayList<Symbol> list = new ArrayList<>();
         for (int i = 0; i < table.size(); i++) {
             if (!((Symbol) table.get(i)).getType()) {
                 list.add(table.get(i));
@@ -222,8 +222,8 @@ public class SymbolTable {
      * @return An ArrayList of Symbol objects.
      **/
 
-    public ArrayList getAllSymbols() {
-        ArrayList list = new ArrayList();
+    public ArrayList<Symbol> getAllSymbols() {
+        ArrayList<Symbol> list = new ArrayList<>();
         for (int i = 0; i < table.size(); i++) {
             list.add(table.get(i));
         }
@@ -245,7 +245,7 @@ public class SymbolTable {
      **/
 
     public void clear() {
-        table = new ArrayList();
+        table = new ArrayList<>();
     }
 
     /**

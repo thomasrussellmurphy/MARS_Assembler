@@ -217,12 +217,12 @@ public class MIPSTokenMarker extends TokenMarker {
      * @return ArrayList of PopupHelpItem objects, one per match.
      */
     public ArrayList getTokenExactMatchHelp(Token token, String tokenText) {
-        ArrayList matches = null;
+        ArrayList<PopupHelpItem> matches = null;
         if (token != null && token.id == Token.KEYWORD1) {
             ArrayList instrMatches = mars.Globals.instructionSet.matchOperator(tokenText);
             if (instrMatches.size() > 0) {
                 int realMatches = 0;
-                matches = new ArrayList();
+                matches = new ArrayList<>();
                 for (int i = 0; i < instrMatches.size(); i++) {
                     Instruction inst = (Instruction) instrMatches.get(i);
                     if (mars.Globals.getSettings().getExtendedAssemblerEnabled() || inst instanceof BasicInstruction) {
@@ -238,7 +238,7 @@ public class MIPSTokenMarker extends TokenMarker {
         if (token != null && token.id == Token.KEYWORD2) {
             Directives dir = Directives.matchDirective(tokenText);
             if (dir != null) {
-                matches = new ArrayList();
+                matches = new ArrayList<>();
                 matches.add(new PopupHelpItem(tokenText, dir.getName(), dir.getDescription()));
             }
         }
@@ -366,19 +366,19 @@ public class MIPSTokenMarker extends TokenMarker {
     // true, will do exact match.  If false, will do prefix match.  Returns null
     // if no matches.
     private ArrayList getTextFromDirectiveMatch(String tokenText, boolean exact) {
-        ArrayList matches = null;
-        ArrayList directiveMatches = null;
+        ArrayList<PopupHelpItem> matches = null;
+        ArrayList<Directives> directiveMatches = null;
         if (exact) {
-            Object dir = Directives.matchDirective(tokenText);
+            Directives dir = Directives.matchDirective(tokenText);
             if (dir != null) {
-                directiveMatches = new ArrayList();
+                directiveMatches = new ArrayList<>();
                 directiveMatches.add(dir);
             }
         } else {
             directiveMatches = Directives.prefixMatchDirectives(tokenText);
         }
         if (directiveMatches != null) {
-            matches = new ArrayList();
+            matches = new ArrayList<>();
             for (int i = 0; i < directiveMatches.size(); i++) {
                 Directives direct = (Directives) directiveMatches.get(i);
                 matches.add(new PopupHelpItem(tokenText, direct.getName(), direct.getDescription(), exact));
@@ -393,7 +393,7 @@ public class MIPSTokenMarker extends TokenMarker {
     private ArrayList getTextFromInstructionMatch(String tokenText, boolean exact) {
         String text = null;
         ArrayList matches = null;
-        ArrayList results = new ArrayList();
+        ArrayList<PopupHelpItem> results = new ArrayList<>();
         if (exact) {
             matches = mars.Globals.instructionSet.matchOperator(tokenText);
         } else {
@@ -403,8 +403,8 @@ public class MIPSTokenMarker extends TokenMarker {
             return null;
         }
         int realMatches = 0;
-        HashMap insts = new HashMap();
-        TreeSet mnemonics = new TreeSet();
+        HashMap<String, String> insts = new HashMap<>();
+        TreeSet<String> mnemonics = new TreeSet<>();
         for (int i = 0; i < matches.size(); i++) {
             Instruction inst = (Instruction) matches.get(i);
             if (mars.Globals.getSettings().getExtendedAssemblerEnabled() || inst instanceof BasicInstruction) {

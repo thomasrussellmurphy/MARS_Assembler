@@ -145,7 +145,7 @@ public class Memory extends Observable {
     // and high end of address range, but retrieval from the tree has to be based
     // on target address being ANYWHERE IN THE RANGE (not an exact key match).
 
-    Collection observables = getNewMemoryObserversCollection();
+    Collection<MemoryObservable> observables = getNewMemoryObserversCollection();
 
     // The data segment is allocated in blocks of 1024 ints (4096 bytes).  Each block is
     // referenced by a "block table" entry, and the table has 1024 entries.  The capacity
@@ -1201,8 +1201,8 @@ public class Memory extends Observable {
     }
 
 
-    private Collection getNewMemoryObserversCollection() {
-        return new Vector();  // Vectors are thread-safe
+    private Collection<MemoryObservable> getNewMemoryObserversCollection() {
+        return new Vector<>();  // Vectors are thread-safe
     }
 
     /////////////////////////////////////////////////////////////////////////

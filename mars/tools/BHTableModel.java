@@ -59,7 +59,7 @@ public class BHTableModel extends AbstractTableModel {
     /**
      * vector holding the entries of the BHT
      */
-    private Vector m_entries;
+    private Vector<BHTEntry> m_entries;
 
     /**
      * number of entries in the BHT
@@ -189,7 +189,7 @@ public class BHTableModel extends AbstractTableModel {
         m_entryCnt = numEntries;
         m_historySize = historySize;
 
-        m_entries = new Vector();
+        m_entries = new Vector<>();
 
         for (int i = 0; i < m_entryCnt; i++) {
             m_entries.add(new BHTEntry(m_historySize, initVal));

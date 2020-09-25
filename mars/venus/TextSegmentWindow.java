@@ -60,7 +60,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
      * consistent once set up, since address column is not editable.
      */
     private int[] intAddresses;      // index is table model row, value is text address
-    private Hashtable addressRows;   // key is text address, value is table model row
+    private Hashtable<Integer, Integer> addressRows;   // key is text address, value is table model row
     private Hashtable<Integer, ModifiedCode> executeMods;   // key is table model row, value is original code, basic, source.
     private Container contentPane;
     private TextTableModel tableModel;
@@ -112,7 +112,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
         ArrayList sourceStatementList = Globals.program.getMachineList();
         data = new Object[sourceStatementList.size()][columnNames.length];
         intAddresses = new int[data.length];
-        addressRows = new Hashtable(data.length);
+        addressRows = new Hashtable<>(data.length);
         executeMods = new Hashtable<>(data.length);
         // Get highest source line number to determine #leading spaces so line numbers will vertically align
         // In multi-file situation, this will not necessarily be the last line b/c sourceStatementList contains

@@ -45,7 +45,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 public class MemoryConfigurations {
 
-    private static ArrayList configurations = null;
+    private static ArrayList<MemoryConfiguration> configurations = null;
     private static MemoryConfiguration defaultConfiguration;
     private static MemoryConfiguration currentConfiguration;
 
@@ -161,7 +161,7 @@ public class MemoryConfigurations {
 
     public static void buildConfigurationCollection() {
         if (configurations == null) {
-            configurations = new ArrayList();
+            configurations = new ArrayList<>();
             configurations.add(new MemoryConfiguration("Default", "Default", configurationItemNames, defaultConfigurationItemValues));
             configurations.add(new MemoryConfiguration("CompactDataAtZero", "Compact, Data at Address 0", configurationItemNames, dataBasedCompactConfigurationItemValues));
             configurations.add(new MemoryConfiguration("CompactTextAtZero", "Compact, Text at Address 0", configurationItemNames, textBasedCompactConfigurationItemValues));

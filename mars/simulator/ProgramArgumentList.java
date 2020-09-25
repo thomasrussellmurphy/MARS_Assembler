@@ -44,7 +44,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 public class ProgramArgumentList {
 
-    ArrayList programArgumentList;
+    ArrayList<String> programArgumentList;
 
     /**
      * Constructor that parses string to produce list.  Delimiters
@@ -55,7 +55,7 @@ public class ProgramArgumentList {
      */
     public ProgramArgumentList(String args) {
         StringTokenizer st = new StringTokenizer(args);
-        programArgumentList = new ArrayList(st.countTokens());
+        programArgumentList = new ArrayList<>(st.countTokens());
         while (st.hasMoreTokens()) {
             programArgumentList.add(st.nextToken());
         }
@@ -79,7 +79,7 @@ public class ProgramArgumentList {
      *                      elements are assumed to contain an argument.
      */
     public ProgramArgumentList(String[] list, int startPosition) {
-        programArgumentList = new ArrayList(list.length - startPosition);
+        programArgumentList = new ArrayList<>(list.length - startPosition);
         for (int i = startPosition; i < list.length; i++) {
             programArgumentList.add(list[i]);
         }
@@ -90,7 +90,7 @@ public class ProgramArgumentList {
      *
      * @param list ArrayList of String, each element containing one argument
      */
-    public ProgramArgumentList(ArrayList list) {
+    public ProgramArgumentList(ArrayList<String> list) {
         this(list, 0);
     }
 
@@ -103,11 +103,11 @@ public class ProgramArgumentList {
      * @param startPosition Index of array element containing the first argument; all remaining
      *                      elements are assumed to contain an argument.
      */
-    public ProgramArgumentList(ArrayList list, int startPosition) {
+    public ProgramArgumentList(ArrayList<String> list, int startPosition) {
         if (list == null || list.size() < startPosition) {
-            programArgumentList = new ArrayList(0);
+            programArgumentList = new ArrayList<>(0);
         } else {
-            programArgumentList = new ArrayList(list.size() - startPosition);
+            programArgumentList = new ArrayList<>(list.size() - startPosition);
             for (int i = startPosition; i < list.size(); i++) {
                 programArgumentList.add(list.get(i));
             }

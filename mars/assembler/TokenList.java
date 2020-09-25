@@ -40,14 +40,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 public class TokenList implements Cloneable {
 
-    private ArrayList tokenList;
+    private ArrayList<Token> tokenList;
     private String processedLine;// DPS 03-Jan-2013
 
     /**
      * Constructor for objects of class TokenList
      */
     public TokenList() {
-        tokenList = new ArrayList();
+        tokenList = new ArrayList<>();
         processedLine = ""; // DPS 03-Jan-2013
     }
 

@@ -1,6 +1,7 @@
 package mars.mips.instructions;
 
 import mars.Globals;
+import mars.assembler.Symbol;
 import mars.mips.instructions.syscalls.Syscall;
 import mars.mips.instructions.syscalls.SyscallNumberOverride;
 import mars.util.FilenameFinder;
@@ -53,7 +54,7 @@ class SyscallLoader {
     private static final String SYSCALL_ABSTRACT = "AbstractSyscall.class";
     private static final String CLASS_EXTENSION = "class";
 
-    private ArrayList syscallList;
+    private ArrayList<Syscall> syscallList;
 
     /*
      *  Dynamically loads Syscalls into an ArrayList.  This method is adapted from
@@ -62,11 +63,11 @@ class SyscallLoader {
      *  in Java".  Also see the "loadMarsTools()" method from ToolLoader class.
      */
     void loadSyscalls() {
-        syscallList = new ArrayList();
+        syscallList = new ArrayList<>();
         // grab all class files in the same directory as Syscall
         ArrayList candidates = FilenameFinder.getFilenameList(this.getClass().getClassLoader(),
                 SYSCALLS_DIRECTORY_PATH, CLASS_EXTENSION);
-        HashMap syscalls = new HashMap();
+        HashMap<String, String> syscalls = new HashMap<>();
         for (int i = 0; i < candidates.size(); i++) {
             String file = (String) candidates.get(i);
             // Do not add class if already encountered (happens if run in MARS development directory)
@@ -104,7 +105,7 @@ class SyscallLoader {
 
     // Will get any syscall number override specifications from MARS config file and
     // process them.  This will alter syscallList entry for affected names.
-    private ArrayList processSyscallNumberOverrides(ArrayList syscallList) {
+    private ArrayList<Syscall> processSyscallNumberOverrides(ArrayList<Syscall> syscallList) {
         ArrayList overrides = new Globals().getSyscallOverrides();
         SyscallNumberOverride override;
         Syscall syscall;

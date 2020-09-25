@@ -102,7 +102,7 @@ public class ToolLoader {
      *  folder, then continue as before.
      */
     private ArrayList loadMarsTools() {
-        ArrayList toolList = new ArrayList();
+        ArrayList<MarsToolClassAndInstance> toolList = new ArrayList<>();
         ArrayList candidates = FilenameFinder.getFilenameList(this.getClass().getClassLoader(),
                 TOOLS_DIRECTORY_PATH, CLASS_EXTENSION);
         // Add any tools stored externally, as listed in Config.properties file.
@@ -112,7 +112,7 @@ public class ToolLoader {
         // it correctly.  Not sure how to create a Class object given an absolute
         // pathname.
         //candidates.addAll(mars.Globals.getExternalTools());  // this by itself is not enough...
-        HashMap tools = new HashMap();
+        HashMap<String, String> tools = new HashMap<>();
         for (int i = 0; i < candidates.size(); i++) {
             String file = (String) candidates.get(i);
             // Do not add class if already encountered (happens if run in MARS development directory)

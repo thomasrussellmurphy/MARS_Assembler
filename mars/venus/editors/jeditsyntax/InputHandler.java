@@ -86,10 +86,10 @@ public abstract class InputHandler extends KeyAdapter {
     // Default action
     public static final ActionListener INSERT_CHAR = new insert_char();
 
-    private static Hashtable actions;
+    private static Hashtable<String, ActionListener> actions;
 
     static {
-        actions = new Hashtable();
+        actions = new Hashtable<>();
         actions.put("backspace", BACKSPACE);
         actions.put("backspace-word", BACKSPACE_WORD);
         actions.put("delete", DELETE);

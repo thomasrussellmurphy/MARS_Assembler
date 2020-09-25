@@ -586,11 +586,11 @@ public class ExtendedInstruction extends Instruction {
     // expands to, which is a string, and breaks out into separate
     // instructions.  They are separated by '\n' character.
 
-    private ArrayList buildTranslationList(String translation) {
+    private ArrayList<String> buildTranslationList(String translation) {
         if (translation == null || translation.length() == 0) {
             return null;
         }
-        ArrayList translationList = new ArrayList();
+        ArrayList<String> translationList = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(translation, "\n");
         while (st.hasMoreTokens()) {
             translationList.add(st.nextToken());

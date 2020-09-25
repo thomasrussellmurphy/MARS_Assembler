@@ -89,7 +89,7 @@ public class Tokenizer {
     public ArrayList tokenize(MIPSprogram p) throws ProcessingException {
         sourceMIPSprogram = p;
         equivalents = new HashMap<>(); // DPS 11-July-2012
-        ArrayList tokenList = new ArrayList();
+        ArrayList<TokenList> tokenList = new ArrayList<>();
         //ArrayList source = p.getSourceList();
         ArrayList<SourceLine> source = processIncludes(p, new HashMap<>()); // DPS 9-Jan-2013
         p.setSourceLineList(source);

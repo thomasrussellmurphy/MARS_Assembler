@@ -683,10 +683,10 @@ public class ProgramStatement {
 
     private class BasicStatementList {
 
-        private ArrayList list;
+        private ArrayList<ListElement> list;
 
         BasicStatementList() {
-            list = new ArrayList();
+            list = new ArrayList<>();
         }
 
         void addString(String string) {

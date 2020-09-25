@@ -39,7 +39,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  **/
 
 public class ErrorList {
-    private ArrayList messages;
+    private ArrayList<ErrorMessage> messages;
     private int errorCount;
     private int warningCount;
     public static final String ERROR_MESSAGE_PREFIX = "Error";
@@ -55,7 +55,7 @@ public class ErrorList {
      **/
 
     public ErrorList() {
-        messages = new ArrayList();
+        messages = new ArrayList<>();
         errorCount = 0;
         warningCount = 0;
     }
