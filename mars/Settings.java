@@ -483,7 +483,7 @@ public class Settings extends Observable {
     // to be created!  It is possible but a real pain in the rear to avoid using
     // Color objects totally.  Requires new methods for the SyntaxUtilities class.
     private void initializeEditorSyntaxStyles() {
-        SyntaxStyle syntaxStyle[] = SyntaxUtilities.getDefaultSyntaxStyles();
+        SyntaxStyle[] syntaxStyle = SyntaxUtilities.getDefaultSyntaxStyles();
         int tokens = syntaxStyle.length;
         syntaxStyleColorSettingsKeys = new String[tokens];
         syntaxStyleBoldSettingsKeys = new String[tokens];

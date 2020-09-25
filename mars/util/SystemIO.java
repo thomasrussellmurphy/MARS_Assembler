@@ -373,7 +373,7 @@ public class SystemIO {
         // that file descriptor.
 
         int retValue = -1;
-        char ch[] = {' '}; // Need an array to convert to String
+        char[] ch = {' '}; // Need an array to convert to String
         FileInputStream inputStream;
         FileOutputStream outputStream;
         int fdToUse;

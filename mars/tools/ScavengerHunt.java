@@ -104,7 +104,7 @@ public class ScavengerHunt implements Observer, MarsTool {
         int color = 0;    // Memory Address:  Base + 0x1c
         long finishTime;
         //int locID;  // ID of the location to which ScavengerHunt players are headed. Not used by player.
-        boolean hasVisitedLoc[] = new boolean[NUM_LOCATIONS];  // boolean: player has visited each location
+        boolean[] hasVisitedLoc = new boolean[NUM_LOCATIONS];  // boolean: player has visited each location
         boolean finis = false;
 
         // Class PlayerData has no constructor

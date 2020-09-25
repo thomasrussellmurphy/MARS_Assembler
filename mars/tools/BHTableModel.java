@@ -74,13 +74,13 @@ public class BHTableModel extends AbstractTableModel {
     /**
      * name of the table columns
      */
-    private String m_columnNames[] = {"Index", "History", "Prediction", "Correct", "Incorrect", "Precision"};
+    private String[] m_columnNames = {"Index", "History", "Prediction", "Correct", "Incorrect", "Precision"};
 
     /**
      * type of the table columns
      */
     //@SuppressWarnings("unchecked")
-    private Class m_columnClasses[] = {Integer.class, String.class, String.class, Integer.class, Integer.class, Double.class};
+    private Class[] m_columnClasses = {Integer.class, String.class, String.class, Integer.class, Integer.class, Double.class};
 
 
     /**

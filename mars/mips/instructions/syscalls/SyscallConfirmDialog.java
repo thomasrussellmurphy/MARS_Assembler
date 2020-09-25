@@ -60,7 +60,7 @@ public class SyscallConfirmDialog extends AbstractSyscall {
 
         String message = new String(); // = "";
         int byteAddress = RegisterFile.getValue(4);
-        char ch[] = {' '}; // Need an array to convert to String
+        char[] ch = {' '}; // Need an array to convert to String
         try {
             ch[0] = (char) Globals.memory.getByte(byteAddress);
             while (ch[0] != 0) // only uses single location ch[0]

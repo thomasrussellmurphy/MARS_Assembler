@@ -103,12 +103,12 @@ public class InstructionStatistics extends AbstractMarsToolAndApplication {
     /**
      * array of text field - one for each instruction category
      */
-    private JTextField m_tfCounters[];
+    private JTextField[] m_tfCounters;
 
     /**
      * array of progress pars - one for each instruction category
      */
-    private JProgressBar m_pbCounters[];
+    private JProgressBar[] m_pbCounters;
 
 
     /**
@@ -119,12 +119,12 @@ public class InstructionStatistics extends AbstractMarsToolAndApplication {
     /**
      * array of counter variables - one for each instruction category
      */
-    private int m_counters[] = new int[MAX_CATEGORY];
+    private int[] m_counters = new int[MAX_CATEGORY];
 
     /**
      * names of the instruction categories as array
      */
-    private String m_categoryLabels[] = {"ALU", "Jump", "Branch", "Memory", "Other"};
+    private String[] m_categoryLabels = {"ALU", "Jump", "Branch", "Memory", "Other"};
 
 
     // From Felipe Lessa's instruction counter.  Prevent double-counting of instructions 
