@@ -314,7 +314,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
             this.active = false;
             this.isText = isText;
             this.color = new Color(0, 153, 0);
-            if (isMovingXaxis == true) {
+            if (isMovingXaxis) {
                 if (init < end)
                     direction = movingLeft;
                 else
@@ -1134,7 +1134,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
             track = new int[size];
             for (int i = 0; i < size; i++)
                 track[i] = v.getInit() + i;
-            if (v.isActive() == true) {
+            if (v.isActive()) {
                 v.setFirst_interaction(false);
                 for (int i = 0; i < size; i++) {
                     if (track[i] <= v.getCurrent()) {
@@ -1145,7 +1145,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                 if (v.getCurrent() == track[size - 1])
                     v.setActive(false);
                 v.setCurrent(v.getCurrent() + 1);
-            } else if (v.isFirst_interaction() == false) {
+            } else if (!v.isFirst_interaction()) {
                 for (int i = 0; i < size; i++) {
                     g2d.setColor(v.getColor());
                     g2d.fillRect(track[i], v.getOppositeAxis(), 3, 3);
@@ -1166,7 +1166,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
             for (int i = 0; i < size; i++)
                 track[i] = v.getInit() - i;
 
-            if (v.isActive() == true) {
+            if (v.isActive()) {
                 v.setFirst_interaction(false);
                 for (int i = 0; i < size; i++) {
                     if (track[i] >= v.getCurrent()) {
@@ -1178,7 +1178,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                     v.setActive(false);
 
                 v.setCurrent(v.getCurrent() - 1);
-            } else if (v.isFirst_interaction() == false) {
+            } else if (!v.isFirst_interaction()) {
                 for (int i = 0; i < size; i++) {
                     g2d.setColor(v.getColor());
                     g2d.fillRect(track[i], v.getOppositeAxis(), 3, 3);
@@ -1205,7 +1205,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                     track[i] = v.getInit() + i;
             }
 
-            if (v.isActive() == true) {
+            if (v.isActive()) {
                 v.setFirst_interaction(false);
                 for (int i = 0; i < size; i++) {
                     if (track[i] >= v.getCurrent()) {
@@ -1217,7 +1217,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                     v.setActive(false);
                 v.setCurrent(v.getCurrent() - 1);
 
-            } else if (v.isFirst_interaction() == false) {
+            } else if (!v.isFirst_interaction()) {
                 for (int i = 0; i < size; i++) {
                     g2d.setColor(v.getColor());
                     g2d.fillRect(v.getOppositeAxis(), track[i], 3, 3);
@@ -1238,7 +1238,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
             for (int i = 0; i < size; i++)
                 track[i] = v.getInit() + i;
 
-            if (v.isActive() == true) {
+            if (v.isActive()) {
                 v.setFirst_interaction(false);
                 for (int i = 0; i < size; i++) {
                     if (track[i] <= v.getCurrent()) {
@@ -1250,7 +1250,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                 if (v.getCurrent() == track[size - 1])
                     v.setActive(false);
                 v.setCurrent(v.getCurrent() + 1);
-            } else if (v.isFirst_interaction() == false) {
+            } else if (!v.isFirst_interaction()) {
                 for (int i = 0; i < size; i++) {
                     g2d.setColor(v.getColor());
                     g2d.fillRect(v.getOppositeAxis(), track[i], 3, 3);
@@ -1285,7 +1285,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                 if (!instructionCode.substring(0, 6).matches("100[0-1][0-1][0-1]"))
                     actionInFunctionalBlock = new TextLayout(" ", new Font("Verdana", Font.BOLD, 13), frc);
             }
-            if (v.isActive() == true) {
+            if (v.isActive()) {
                 v.setFirst_interaction(false);
                 actionInFunctionalBlock.draw(g2d, v.getOppositeAxis(), v.getCurrent());
                 if (v.getCurrent() == v.getEnd())
@@ -1317,10 +1317,10 @@ public class MipsXray extends AbstractMarsToolAndApplication {
             Vertex vert;
             for (int i = 0; i < vertexTraversed.size(); i++) {
                 vert = vertexTraversed.get(i);
-                if (vert.isMovingXaxis == true) {
+                if (vert.isMovingXaxis) {
                     if (vert.getDirection() == vert.movingLeft) {
                         printTrackLtoR(vert);
-                        if (vert.isActive() == false) {
+                        if (!vert.isActive()) {
                             int j = vert.getTargetVertex().size();
                             Vertex tempVertex;
                             for (int k = 0; k < j; k++) {
@@ -1330,7 +1330,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                                     if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
                                         hasThisVertex = true;
                                 }
-                                if (hasThisVertex == false) {
+                                if (!hasThisVertex) {
                                     outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
                                     vertexTraversed.add(outputGraph.get(vert.getNumIndex()).get(k));
                                 }
@@ -1338,7 +1338,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                         }
                     } else {
                         printTrackRtoL(vert);
-                        if (vert.isActive() == false) {
+                        if (!vert.isActive()) {
                             int j = vert.getTargetVertex().size();
                             Vertex tempVertex;
                             for (int k = 0; k < j; k++) {
@@ -1348,7 +1348,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                                     if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
                                         hasThisVertex = true;
                                 }
-                                if (hasThisVertex == false) {
+                                if (!hasThisVertex) {
                                     outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
                                     vertexTraversed.add(outputGraph.get(vert.getNumIndex()).get(k));
                                 }
@@ -1358,12 +1358,12 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                 } //end of condition of X axis
                 else {
                     if (vert.getDirection() == vert.movingDownside) {
-                        if (vert.isText == true)
+                        if (vert.isText)
                             printTextDtoU(vert);
                         else
                             printTrackDtoU(vert);
 
-                        if (vert.isActive() == false) {
+                        if (!vert.isActive()) {
                             int j = vert.getTargetVertex().size();
                             Vertex tempVertex;
                             for (int k = 0; k < j; k++) {
@@ -1373,7 +1373,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                                     if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
                                         hasThisVertex = true;
                                 }
-                                if (hasThisVertex == false) {
+                                if (!hasThisVertex) {
                                     outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
                                     vertexTraversed.add(outputGraph.get(vert.getNumIndex()).get(k));
                                 }
@@ -1383,7 +1383,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                     } else {
 
                         printTrackUtoD(vert);
-                        if (vert.isActive() == false) {
+                        if (!vert.isActive()) {
                             int j = vert.getTargetVertex().size();
                             Vertex tempVertex;
                             for (int k = 0; k < j; k++) {
@@ -1393,7 +1393,7 @@ public class MipsXray extends AbstractMarsToolAndApplication {
                                     if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
                                         hasThisVertex = true;
                                 }
-                                if (hasThisVertex == false) {
+                                if (!hasThisVertex) {
                                     outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
                                     vertexTraversed.add(outputGraph.get(vert.getNumIndex()).get(k));
                                 }
