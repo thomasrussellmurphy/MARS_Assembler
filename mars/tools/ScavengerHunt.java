@@ -918,7 +918,7 @@ public class ScavengerHunt implements Observer, MarsTool {
 
             for (int j = 0; j < NUM_LOCATIONS; j++)  // Initialize the locations this player goes to
             {
-                toolWritePlayerData(i, OFFSET_LOC_ARRAY + (j * 8) + 0, loc[j].X);  // Set the same locations for each player
+                toolWritePlayerData(i, OFFSET_LOC_ARRAY + (j * 8), loc[j].X);  // Set the same locations for each player
                 toolWritePlayerData(i, OFFSET_LOC_ARRAY + (j * 8) + 4, loc[j].Y);  // Set the same locations for each player
             }
 

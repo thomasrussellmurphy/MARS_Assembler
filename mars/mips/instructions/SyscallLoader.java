@@ -1,7 +1,6 @@
 package mars.mips.instructions;
 
 import mars.Globals;
-import mars.assembler.Symbol;
 import mars.mips.instructions.syscalls.Syscall;
 import mars.mips.instructions.syscalls.SyscallNumberOverride;
 import mars.util.FilenameFinder;
