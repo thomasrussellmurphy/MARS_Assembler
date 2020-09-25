@@ -76,7 +76,7 @@ public class SyscallMessageDialogFloat extends AbstractSyscall {
 
         // Display the dialog.
         JOptionPane.showMessageDialog(null,
-                message + Float.toString(Coprocessor1.getFloatFromRegister("$f12")),
+                message + Coprocessor1.getFloatFromRegister("$f12"),
                 null,
                 JOptionPane.INFORMATION_MESSAGE);
 

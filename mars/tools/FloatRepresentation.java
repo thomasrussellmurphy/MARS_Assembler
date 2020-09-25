@@ -887,7 +887,7 @@ public class FloatRepresentation extends AbstractMarsToolAndApplication {
 
         // format the label for a given integer exponent value...
         private String buildSubtractLabel(int value) {
-            return Integer.toString(value) + subtractLabelTrailer;
+            return value + subtractLabelTrailer;
         }
 
     }
