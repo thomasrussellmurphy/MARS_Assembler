@@ -534,7 +534,7 @@ public class CacheSimulator extends AbstractMarsToolAndApplication {
     // Update the Set Size combo box selection in response to other selections..
     private void updateCacheSetSizeSelector() {
         cacheSetSizeSelector.setModel(
-                new DefaultComboBoxModel<String>(determineSetSizeChoices(
+                new DefaultComboBoxModel<>(determineSetSizeChoices(
                         cacheBlockCountSelector.getSelectedIndex(),
                         cachePlacementSelector.getSelectedIndex()
                 )));
