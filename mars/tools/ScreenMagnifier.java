@@ -123,8 +123,7 @@ class Magnifier extends JFrame implements ComponentListener {
         addComponentListener(this);
         try {
             robot = new Robot();
-        } catch (AWTException e) {
-        } catch (SecurityException e) {
+        } catch (AWTException | SecurityException e) {
         }
 
         close = new JButton("Close");

@@ -250,9 +250,8 @@ public class FileDumpMemoryAction extends GuiAction {
             if (operationOK) {
                 try {
                     format.dumpMemoryRange(theFile, firstAddress, lastAddress);
-                } catch (AddressErrorException aee) {
+                } catch (AddressErrorException | IOException aee) {
 
-                } catch (IOException ioe) {
                 }
             }
         }

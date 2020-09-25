@@ -197,9 +197,7 @@ public class MarsBot implements Observer, MarsTool {
                 try {
                     g2.drawLine((int) arrayOfTrack[i - 1].getX(), (int) arrayOfTrack[i - 1].getY(),
                             (int) arrayOfTrack[i].getX(), (int) arrayOfTrack[i].getY());
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    // No action   TBD sloppy
-                } catch (NullPointerException e) {
+                } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
                     // No action   TBD sloppy
                 }
             }

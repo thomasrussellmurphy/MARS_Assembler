@@ -126,10 +126,7 @@ public class FilenameFinder {
             }
             return filenameList;
 
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            return filenameList;
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
             return filenameList;
         }

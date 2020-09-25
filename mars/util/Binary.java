@@ -663,9 +663,7 @@ public class Binary {
                     (v.length() > 1))  // Has to have more digits than the leading zero
                 return true;  // Form is 0.... and the entire string is parseable as a number
 
-        } catch (StringIndexOutOfBoundsException e) {
-            return false;
-        } catch (NumberFormatException e) {
+        } catch (StringIndexOutOfBoundsException | NumberFormatException e) {
             return false;
         }
 

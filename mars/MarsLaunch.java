@@ -186,9 +186,7 @@ public class MarsLaunch {
                     segInfo = new Integer[2];
                     segInfo[0] = Binary.stringToInt(memoryRange[0]); // low end of range
                     segInfo[1] = Binary.stringToInt(memoryRange[1]); // high end of range
-                } catch (NumberFormatException nfe) {
-                    segInfo = null;
-                } catch (NullPointerException npe) {
+                } catch (NumberFormatException | NullPointerException nfe) {
                     segInfo = null;
                 }
             }
