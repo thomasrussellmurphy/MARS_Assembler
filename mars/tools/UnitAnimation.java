@@ -311,7 +311,7 @@ class UnitAnimation extends JPanel
                 end = datapath_mapItem.getElementsByTagName("end");
                 //definition of colors line 
 
-                if (instructionCode.substring(0, 6).equals("000000")) {//R-type instructions
+                if (instructionCode.startsWith("000000")) {//R-type instructions
                     color = datapath_mapItem.getElementsByTagName("color_Rtype");
                     //System.out.println("rtype");
                 } else if (instructionCode.substring(0, 6).matches("00001[0-1]")) { //J-type instructions
@@ -391,7 +391,7 @@ class UnitAnimation extends JPanel
                 end = datapath_mapItem.getElementsByTagName("end");
                 //definition of colors line 
 
-                if (instructionCode.substring(0, 6).equals("000000")) {//R-type instructions 
+                if (instructionCode.startsWith("000000")) {//R-type instructions
                     if (instructionCode.substring(28, 32).matches("0000")) { //BRANCH type instructions
                         color = datapath_mapItem.getElementsByTagName("ALU_out010");
                         System.out.println("ALU_out010 type " + instructionCode.substring(28, 32));

@@ -82,7 +82,7 @@ public class RegisterFile {
             System.out.println("Name: " + regFile[i].getName());
             System.out.println("Number: " + regFile[i].getNumber());
             System.out.println("Value: " + regFile[i].getValue());
-            System.out.println("");
+            System.out.println();
         }
     }
 

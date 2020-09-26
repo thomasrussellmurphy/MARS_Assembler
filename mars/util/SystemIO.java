@@ -55,7 +55,7 @@ public class SystemIO {
     /**
      * String used for description of file error
      */
-    public static String fileErrorString = new String("File operation OK");
+    public static String fileErrorString = "File operation OK";
 
     private static final int O_RDONLY = 0x00000000;
     private static final int O_WRONLY = 0x00000001;
@@ -267,8 +267,7 @@ public class SystemIO {
 
         if (!FileIOData.fdInUse(fd, 1)) // Check the existence of the "write" fd
         {
-            fileErrorString = new String(
-                    "File descriptor " + fd + " is not open for writing");
+            fileErrorString = "File descriptor " + fd + " is not open for writing";
             return -1;
         }
         // retrieve FileOutputStream from storage
@@ -291,12 +290,10 @@ public class SystemIO {
             }
             outputStream.flush();// DPS 7-Jan-2013
         } catch (IOException e) {
-            fileErrorString = new String(
-                    "IO Exception on write of file with fd " + fd);
+            fileErrorString = "IO Exception on write of file with fd " + fd;
             return -1;
         } catch (IndexOutOfBoundsException e) {
-            fileErrorString = new String(
-                    "IndexOutOfBoundsException on write of file with fd" + fd);
+            fileErrorString = "IndexOutOfBoundsException on write of file with fd" + fd;
             return -1;
         }
 
@@ -330,8 +327,7 @@ public class SystemIO {
 
         if (!FileIOData.fdInUse(fd, 0)) // Check the existence of the "read" fd
         {
-            fileErrorString = new String(
-                    "File descriptor " + fd + " is not open for reading");
+            fileErrorString = "File descriptor " + fd + " is not open for reading";
             return -1;
         }
         // retrieve FileInputStream from storage
@@ -345,12 +341,10 @@ public class SystemIO {
                 retValue = 0;
             }
         } catch (IOException e) {
-            fileErrorString = new String(
-                    "IO Exception on read of file with fd " + fd);
+            fileErrorString = "IO Exception on read of file with fd " + fd;
             return -1;
         } catch (IndexOutOfBoundsException e) {
-            fileErrorString = new String(
-                    "IndexOutOfBoundsException on read of file with fd" + fd);
+            fileErrorString = "IndexOutOfBoundsException on read of file with fd" + fd;
             return -1;
         }
         return retValue;
@@ -393,8 +387,7 @@ public class SystemIO {
                 inputStream = new FileInputStream(filename);
                 FileIOData.setStreamInUse(fdToUse, inputStream); // Save stream for later use
             } catch (FileNotFoundException e) {
-                fileErrorString = new String(
-                        "File " + filename + " not found, open for input.");
+                fileErrorString = "File " + filename + " not found, open for input.";
                 retValue = -1;
             }
         } else if ((flags & O_WRONLY) != 0) // Open for writing only
@@ -404,8 +397,7 @@ public class SystemIO {
                 outputStream = new FileOutputStream(filename, ((flags & O_APPEND) != 0));
                 FileIOData.setStreamInUse(fdToUse, outputStream); // Save stream for later use
             } catch (FileNotFoundException e) {
-                fileErrorString = new String(
-                        "File " + filename + " not found, open for output.");
+                fileErrorString = "File " + filename + " not found, open for output.";
                 retValue = -1;
             }
         }
@@ -557,16 +549,14 @@ public class SystemIO {
         private static int nowOpening(String filename, int flag) {
             int i = 0;
             if (filenameInUse(filename)) {
-                fileErrorString = new String(
-                        "File name " + filename + " is already open.");
+                fileErrorString = "File name " + filename + " is already open.";
                 return -1;
             }
 
             if (flag != O_RDONLY && flag != O_WRONLY && flag != (O_WRONLY | O_APPEND)) // Only read and write are implemented
             {
-                fileErrorString = new String(
-                        "File name " + filename
-                                + " has unknown requested opening flag");
+                fileErrorString = "File name " + filename
+                        + " has unknown requested opening flag";
                 return -1;
             }
 
@@ -576,17 +566,16 @@ public class SystemIO {
 
             if (i >= SYSCALL_MAXFILES) // no available file descriptors
             {
-                fileErrorString = new String(
-                        "File name " + filename
-                                + " exceeds maximum open file limit of "
-                                + SYSCALL_MAXFILES);
+                fileErrorString = "File name " + filename
+                        + " exceeds maximum open file limit of "
+                        + SYSCALL_MAXFILES;
                 return -1;
             }
 
             // Must be OK -- put filename in table
-            fileNames[i] = new String(filename); // our table has its own copy of filename
+            fileNames[i] = filename; // our table has its own copy of filename
             fileFlags[i] = flag;
-            fileErrorString = new String("File operation OK");
+            fileErrorString = "File operation OK";
             return i;
 
         }

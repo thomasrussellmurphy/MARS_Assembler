@@ -530,6 +530,7 @@ public class FloatRepresentation extends AbstractMarsToolAndApplication {
         }
 
         //  Build binary expansion formula for display -- will not be editable.
+        @SuppressWarnings("StringOperationCanBeSimplified")
         public String buildExpansionFromBinaryString(String binaryString) {
             int biasedExponent = Binary.binaryStringToInt(
                     binaryString.substring(maxLengthBinarySign, maxLengthBinarySign + maxLengthBinaryExponent));

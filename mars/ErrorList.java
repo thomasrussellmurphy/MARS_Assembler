@@ -190,7 +190,7 @@ public class ErrorList {
 
     // Produces either error or warning report.
     private String generateReport(boolean isWarning) {
-        StringBuffer report = new StringBuffer("");
+        StringBuffer report = new StringBuffer();
         String reportLine;
         for (int i = 0; i < messages.size(); i++) {
             ErrorMessage m = messages.get(i);

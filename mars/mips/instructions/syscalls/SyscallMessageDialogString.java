@@ -57,7 +57,7 @@ public class SyscallMessageDialogString extends AbstractSyscall {
         //   $a1 = address of null-terminated string to display after the first message
         // Output: none
 
-        String message = new String(); // = "";
+        String message = "";
         int byteAddress = RegisterFile.getValue(4);
         char[] ch = {' '}; // Need an array to convert to String
         try {
@@ -73,7 +73,7 @@ public class SyscallMessageDialogString extends AbstractSyscall {
         }
 
 
-        String message2 = new String(); // = "";
+        String message2 = "";
         byteAddress = RegisterFile.getValue(5);
         try {
             ch[0] = (char) Globals.memory.getByte(byteAddress);

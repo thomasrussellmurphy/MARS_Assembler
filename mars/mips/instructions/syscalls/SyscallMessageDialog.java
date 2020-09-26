@@ -62,7 +62,7 @@ public class SyscallMessageDialog extends AbstractSyscall {
         //       other: plain message
         // Output: none
 
-        String message = new String(); // = "";
+        String message = "";
         int byteAddress = RegisterFile.getValue(4);
         char[] ch = {' '}; // Need an array to convert to String
         try {

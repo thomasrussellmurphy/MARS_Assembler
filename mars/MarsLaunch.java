@@ -628,7 +628,7 @@ public class MarsLaunch {
                                 Binary.binaryStringToHexString(
                                         Binary.longToBinaryString(lvalue)));
                     } else {
-                        out.println("");
+                        out.println();
                     }
                 } else if (displayFormat == DECIMAL) {
                     // display float (and double, if applicable) in decimal
@@ -636,7 +636,7 @@ public class MarsLaunch {
                     if (hasDouble) {
                         out.println("\t" + dvalue);
                     } else {
-                        out.println("");
+                        out.println();
                     }
                 } else { // displayFormat == ASCII
                     out.print(Binary.intToAscii(ivalue));
@@ -645,7 +645,7 @@ public class MarsLaunch {
                                 Binary.intToAscii(Binary.highOrderLongToInt(lvalue)) +
                                 Binary.intToAscii(Binary.lowOrderLongToInt(lvalue)));
                     } else {
-                        out.println("");
+                        out.println();
                     }
                 }
             }

@@ -60,7 +60,7 @@ public class SyscallMessageDialogDouble extends AbstractSyscall {
         //   $f12 = double value to display in string form after the first message
         // Output: none
 
-        String message = new String(); // = "";
+        String message = "";
         int byteAddress = RegisterFile.getValue(4);
         char[] ch = {' '}; // Need an array to convert to String
         try {

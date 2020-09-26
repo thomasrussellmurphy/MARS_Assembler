@@ -83,7 +83,7 @@ public class Coprocessor1 {
             System.out.println("Name: " + registers[i].getName());
             System.out.println("Number: " + registers[i].getNumber());
             System.out.println("Value: " + registers[i].getValue());
-            System.out.println("");
+            System.out.println();
         }
     }
 

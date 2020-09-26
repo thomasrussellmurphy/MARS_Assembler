@@ -284,8 +284,8 @@ public class Binary {
      * @return String containing '0', '1', ...'F' which form hexadecimal equivalent of int.
      */
     public static String intToHexString(int d) {
-        String leadingZero = new String("0");
-        String leadingX = new String("0x");
+        String leadingZero = "0";
+        String leadingX = "0x";
         String t = Integer.toHexString(d);
         while (t.length() < 8)
             t = leadingZero.concat(t);
@@ -305,11 +305,11 @@ public class Binary {
      * @return String containing '0', '1', ...'F' which form hexadecimal equivalent of int.
      */
     public static String intToHalfHexString(int d) {
-        String leadingZero = new String("0");
-        String leadingX = new String("0x");
+        String leadingZero = "0";
+        String leadingX = "0x";
         String t = Integer.toHexString(d);
         if (t.length() > 4) {
-            t = t.substring(t.length() - 4, t.length());
+            t = t.substring(t.length() - 4);
         }
         while (t.length() < 4)
             t = leadingZero.concat(t);
@@ -374,7 +374,7 @@ public class Binary {
      */
 
     public static int stringToInt(String s) throws NumberFormatException {
-        String work = new String(s);
+        String work = s;
         int result = 0;
         // First, use Integer.decode().  This will validate most, but it flags
         // valid hex two's complement values as exceptions.  We'll catch those and
@@ -440,7 +440,7 @@ public class Binary {
      */
 
     public static long stringToLong(String s) throws NumberFormatException {
-        String work = new String(s);
+        String work = s;
         long result = 0;
         // First, use Long.decode().  This will validate most, but it flags
         // valid hex two's complement values as exceptions.  We'll catch those and
