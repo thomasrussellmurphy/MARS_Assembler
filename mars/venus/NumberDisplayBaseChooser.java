@@ -138,9 +138,6 @@ public class NumberDisplayBaseChooser extends JCheckBox {
     public static String formatNumber(int value, int base) {
         String result;
         switch (base) {
-            case HEXADECIMAL:
-                result = Binary.intToHexString(value);
-                break;
             case DECIMAL:
                 result = Integer.toString(value);
                 break;
@@ -148,15 +145,9 @@ public class NumberDisplayBaseChooser extends JCheckBox {
                 result = Binary.intToAscii(value);
                 break;
             default:
-                result = Integer.toString(value);
+                result = Binary.intToHexString(value);
         }
         return result;
-        //          if (base == NumberDisplayBaseChooser.HEXADECIMAL) {
-        //             return Binary.intToHexString(value);
-        //          } 
-        //          else {
-        //             return Integer.toString(value);
-        //          }
     }
 
 

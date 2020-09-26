@@ -660,9 +660,6 @@ public class MarsLaunch {
             case DECIMAL:
                 strValue = "" + value;
                 break;
-            case HEXADECIMAL:
-                strValue = Binary.intToHexString(value);
-                break;
             case ASCII:
                 strValue = Binary.intToAscii(value);
                 break;

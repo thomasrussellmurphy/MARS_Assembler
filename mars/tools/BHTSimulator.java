@@ -282,6 +282,7 @@ public class BHTSimulator extends AbstractMarsToolAndApplication implements Acti
      * @param stmt the branch instruction to be investigated
      * @return true if the branch will be taken, otherwise false
      */
+    @SuppressWarnings("DuplicateBranchesInSwitch")
     protected static boolean willBranch(ProgramStatement stmt) {
         int opCode = stmt.getBinaryStatement() >>> (32 - 6);
         int funct = stmt.getBinaryStatement() & 0x1F;
@@ -294,34 +295,22 @@ public class BHTSimulator extends AbstractMarsToolAndApplication implements Acti
 
         if (opCode == 0x01) {
             switch (funct) {
-                case 0x00:
-                    return valRS < 0; // bltz
-                case 0x01:
-                    return valRS >= 0; // bgez
-                case 0x02:
-                    return valRS < 0; // bltzl
-                case 0x03:
-                    return valRS >= 0; // bgezl			
+                case 0x00: return valRS < 0;    // bltz
+                case 0x01: return valRS >= 0;   // bgez
+                case 0x02: return valRS < 0;    // bltzl
+                case 0x03: return valRS >= 0;   // bgezl
             }
         }
 
         switch (opCode) {
-            case 0x04:
-                return valRS == valRT;
-            case 0x05:
-                return valRS != valRT;
-            case 0x06:
-                return valRS <= 0;
-            case 0x07:
-                return valRS >= 0;
-            case 0x14:
-                return valRS == valRT;
-            case 0x15:
-                return valRS != valRT;
-            case 0x16:
-                return valRS <= 0;
-            case 0x17:
-                return valRS >= 0;
+            case 0x04: return valRS == valRT;
+            case 0x05: return valRS != valRT;
+            case 0x06: return valRS <= 0;
+            case 0x07: return valRS >= 0;
+            case 0x14: return valRS == valRT;
+            case 0x15: return valRS != valRT;
+            case 0x16: return valRS <= 0;
+            case 0x17: return valRS >= 0;
         }
 
         return true;
