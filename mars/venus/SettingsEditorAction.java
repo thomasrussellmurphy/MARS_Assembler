@@ -520,7 +520,7 @@ public class SettingsEditorAction extends GuiAction {
 
             public void actionPerformed(ActionEvent e) {
                 Font f = samples[row].getFont();
-                if (e.getActionCommand() == BOLD_BUTTON_TOOL_TIP_TEXT) {
+                if (e.getActionCommand().equals(BOLD_BUTTON_TOOL_TIP_TEXT)) {
                     if (bold[row].isSelected()) {
                         samples[row].setFont(f.deriveFont(f.getStyle() | Font.BOLD));
                     } else {

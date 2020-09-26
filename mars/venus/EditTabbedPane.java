@@ -703,7 +703,7 @@ public class EditTabbedPane extends JTabbedPane {
 
         private class ChoosableFileFilterChangeListener implements PropertyChangeListener {
             public void propertyChange(java.beans.PropertyChangeEvent e) {
-                if (e.getPropertyName() == JFileChooser.CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY) {
+                if (e.getPropertyName().equals(JFileChooser.CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY)) {
                     FileFilter[] newFilters = (FileFilter[]) e.getNewValue();
                     FileFilter[] oldFilters = (FileFilter[]) e.getOldValue();
                     if (newFilters.length > fileFilterList.size()) {

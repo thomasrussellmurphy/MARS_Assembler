@@ -327,29 +327,28 @@ public class Assembler {
                         // If this is the case, skip remainder of loop iteration. This should only
                         // happen if template substitution was for "nop" instruction but delayed branching
                         // is disabled so the "nop" is not generated.
-                        if (instruction == null || instruction == "") {
-                            continue;
-                        }
 
-                        // All substitutions have been made so we have generated
-                        // a valid basic instruction!
-                        if (Globals.debug)
-                            System.out.println("PSEUDO generated: " + instruction);
-                        // For generated instruction: tokenize, build program
-                        // statement, add to list.
-                        TokenList newTokenList = new Tokenizer().tokenizeLine(sourceLine,
-                                instruction, errors, false);
-                        ArrayList instrMatches = this.matchInstruction(newTokenList.get(0));
-                        Instruction instr = OperandFormat.bestOperandMatch(newTokenList,
-                                instrMatches);
-                        // Only first generated instruction is linked to original source
-                        ProgramStatement ps = new ProgramStatement(
-                                this.fileCurrentlyBeingAssembled,
-                                (instrNumber == 0) ? statement.getSource() : "", newTokenList,
-                                newTokenList, instr, textAddress.get(), statement.getSourceLine());
-                        textAddress.increment(Instruction.INSTRUCTION_LENGTH);
-                        ps.buildBasicStatementFromBasicInstruction(errors);
-                        this.machineList.add(ps);
+                        if (instruction != null && !instruction.isEmpty()) {
+                            // All substitutions have been made so we have generated
+                            // a valid basic instruction!
+                            if (Globals.debug)
+                                System.out.println("PSEUDO generated: " + instruction);
+                            // For generated instruction: tokenize, build program
+                            // statement, add to list.
+                            TokenList newTokenList = new Tokenizer().tokenizeLine(sourceLine,
+                                    instruction, errors, false);
+                            ArrayList instrMatches = this.matchInstruction(newTokenList.get(0));
+                            Instruction instr = OperandFormat.bestOperandMatch(newTokenList,
+                                    instrMatches);
+                            // Only first generated instruction is linked to original source
+                            ProgramStatement ps = new ProgramStatement(
+                                    this.fileCurrentlyBeingAssembled,
+                                    (instrNumber == 0) ? statement.getSource() : "", newTokenList,
+                                    newTokenList, instr, textAddress.get(), statement.getSourceLine());
+                            textAddress.increment(Instruction.INSTRUCTION_LENGTH);
+                            ps.buildBasicStatementFromBasicInstruction(errors);
+                            this.machineList.add(ps);
+                        }
                     } // end of FOR loop, repeated for each template in list.
                 } // end of ELSE part for extended instruction.
 
