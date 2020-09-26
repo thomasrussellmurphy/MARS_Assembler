@@ -483,7 +483,7 @@ public class LabelsWindow extends JInternalFrame {
                     sortState = sortStateTransitions[sortState][realIndex];
                     tableSortComparator = tableSortingComparators[sortState];
                     columnNames = sortColumnHeadings[sortState];
-                    Globals.getSettings().setLabelSortState(new Integer(sortState).toString());
+                    Globals.getSettings().setLabelSortState(Integer.toString(sortState));
                     setupTable();
                     Globals.getGui().getMainPane().getExecutePane().setLabelWindowVisibility(false);
                     Globals.getGui().getMainPane().getExecutePane().setLabelWindowVisibility(true);
