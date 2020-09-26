@@ -135,8 +135,11 @@ public class EditorFont {
      * as String) or greater than MAX_SIZE (returns MAX_SIZE as String).
      */
     public static String sizeIntToSizeString(int size) {
-        int result = (size < MIN_SIZE) ? MIN_SIZE : ((size > MAX_SIZE) ? MAX_SIZE : size);
-        return String.valueOf(result);
+        if (size < MIN_SIZE) {
+            return String.valueOf(MIN_SIZE);
+        } else {
+            return String.valueOf(Math.min(size, MAX_SIZE));
+        }
     }
 
     /**
@@ -153,7 +156,7 @@ public class EditorFont {
             result = Integer.parseInt(size);
         } catch (NumberFormatException e) {
         }
-        return (result < MIN_SIZE) ? MIN_SIZE : ((result > MAX_SIZE) ? MAX_SIZE : result);
+        return (result < MIN_SIZE) ? MIN_SIZE : (Math.min(result, MAX_SIZE));
     }
 
     /**
