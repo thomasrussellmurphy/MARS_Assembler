@@ -66,7 +66,7 @@ public class HardcopyWriter extends Writer {
     // A field to save state between invocations of the write( ) method
     private boolean last_char_was_return = false;
     // A static variable that holds user preferences between print jobs
-    protected static Properties printprops = new Properties();
+    protected static final Properties printprops = new Properties();
 
     /**
      * The constructor for this class has a bunch of arguments:
