@@ -1191,7 +1191,7 @@ public class Settings extends Observable {
      * Should be 1 or 2.  If 1, the popup will be generated after first letter typed, based on all matches; if 2,
      * the popup will be generated after second letter typed.
      *
-     * @param number of letters (should be 1 or 2).
+     * @param length of letters (should be 1 or 2).
      */
     public void setEditorPopupPrefixLength(int length) {
         setStringSetting(EDITOR_POPUP_PREFIX_LENGTH, "" + length);

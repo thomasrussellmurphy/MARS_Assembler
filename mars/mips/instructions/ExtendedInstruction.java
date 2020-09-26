@@ -213,7 +213,7 @@ public class ExtendedInstruction extends Instruction {
      * </UL>
      *
      * @param template  a String containing template for basic statement.
-     * @param tokenList a TokenList containing tokens from extended instruction.
+     * @param theTokenList a TokenList containing tokens from extended instruction.
      * @return String representing basic assembler statement.
      */
 

@@ -78,10 +78,10 @@ public class ProgramArgumentList {
      * @param startPosition Index of array element containing the first argument; all remaining
      *                      elements are assumed to contain an argument.
      */
-    public ProgramArgumentList(String[] list, int startPosition) {
-        programArgumentList = new ArrayList<>(list.length - startPosition);
-        for (int i = startPosition; i < list.length; i++) {
-            programArgumentList.add(list[i]);
+    public ProgramArgumentList(String[] args, int startPosition) {
+        programArgumentList = new ArrayList<>(args.length - startPosition);
+        for (int i = startPosition; i < args.length; i++) {
+            programArgumentList.add(args[i]);
         }
     }
 
