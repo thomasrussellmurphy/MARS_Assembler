@@ -628,7 +628,6 @@ public class ScavengerHunt implements Observer, MarsTool {
                         toolReadPlayerData(playerID, OFFSET_MOVE_TO_X) + "," +
                         toolReadPlayerData(playerID, OFFSET_MOVE_TO_Y) + ")");
 
-                return;
             }
 
         } // end if Player wrote nonzero data to his/her assigned MoveReady location

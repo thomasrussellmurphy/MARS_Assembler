@@ -87,6 +87,5 @@ public class FilePrintAction extends GuiAction {
             out.close();
         } catch (IOException ioe) {
         }
-        return;
     }
 }      

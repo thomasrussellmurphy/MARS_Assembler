@@ -99,7 +99,6 @@ class SyscallLoader {
             }
         }
         syscallList = processSyscallNumberOverrides(syscallList);
-        return;
     }
 
     // Will get any syscall number override specifications from MARS config file and

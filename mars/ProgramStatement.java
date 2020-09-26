@@ -364,7 +364,6 @@ public class ProgramStatement {
                 this.insertBinaryCode(this.operands[i], Instruction.operandMask[i], errors);
         }
         this.binaryStatement = Binary.binaryStringToInt(this.machineStatement);
-        return;
     } // buildMachineStatementFromBasicStatement(
 
 
@@ -604,7 +603,6 @@ public class ProgramStatement {
         if (endPos < this.machineStatement.length() - 1)
             state = state + this.machineStatement.substring(endPos + 1);
         this.machineStatement = state;
-        return;
     } // insertBinaryCode()
 
 

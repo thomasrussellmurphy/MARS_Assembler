@@ -462,7 +462,6 @@ public class Coprocessor1Window extends JPanel implements ActionListener, Observ
                 // Should not occur; code below will re-display original value
                 fireTableCellUpdated(row, col);
             }
-            return;
         }
 
 

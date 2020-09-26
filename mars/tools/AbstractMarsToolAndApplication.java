@@ -760,7 +760,6 @@ public abstract class AbstractMarsToolAndApplication extends JFrame implements M
                 observing = false;
                 operationStatusMessages.displayTerminatingMessage(terminatingMessage + fileToAssemble);
             }
-            return;
         }
     }
 

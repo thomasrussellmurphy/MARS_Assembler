@@ -196,7 +196,6 @@ public class ProgramArgumentList {
             System.out.println("Internal Error: Memory write error occurred while storing program arguments! " + aee);
             System.exit(0);
         }
-        return;
     }
 
 
