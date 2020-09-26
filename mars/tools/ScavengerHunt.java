@@ -196,7 +196,7 @@ public class ScavengerHunt implements Observer, MarsTool {
             // final JFrame frame = new JFrame("ScavengerHunt");
             // Recommended by Pete Sanderson, 2 Nov. 2006, so that the Tool window and
             // MARS window can be on the screen at the same time.
-            final JDialog frame = new JDialog(Globals.getGui(), "ScavengerHunt");
+            final JDialog dialog = new JDialog(Globals.getGui(), "ScavengerHunt");
 
             // System.out.println("ScavengerHuntRunnable.constructor: starting....");
 
@@ -219,29 +219,25 @@ public class ScavengerHunt implements Observer, MarsTool {
                     });
             buttonPanel.add(resetButton);
 
-
             panel.add(graphicArea, BorderLayout.CENTER);
             panel.add(buttonPanel, BorderLayout.SOUTH);
 
-
             // Snippet by Pete Sanderson, 2 Nov. 2006, to be a window-closing sequence
-            frame.addWindowListener(
+            dialog.addWindowListener(
                     new WindowAdapter() {
                         public void windowClosing(WindowEvent e) {
-                            frame.setVisible(false);
-                            frame.dispose();
+                            dialog.setVisible(false);
+                            dialog.dispose();
                         }
                     });
 
-            frame.getContentPane().add(panel);
-            frame.setLocationRelativeTo(null);
-            frame.pack();
-            frame.setVisible(true);
-            frame.setTitle(" This is the ScavengerHunt");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // TBD --- This should close only the Tool, not the entire MARS
-            frame.setPreferredSize(new Dimension(GRAPHIC_WIDTH, GRAPHIC_HEIGHT)); // TBD  SIZE
-            frame.setVisible(true); // show();
-
+            dialog.getContentPane().add(panel);
+            dialog.setTitle(" This is the ScavengerHunt");
+            dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            dialog.setPreferredSize(new Dimension(GRAPHIC_WIDTH, GRAPHIC_HEIGHT));
+            dialog.pack();
+            dialog.setLocationRelativeTo(null);
+            dialog.setVisible(true);
         } // end ScavengerHuntRunnable() constructor
 
         public void run() {
