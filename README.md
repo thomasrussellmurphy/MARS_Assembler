@@ -12,9 +12,9 @@ I don't think I'll accept any pull request, this is something I did just for fun
 
 If you want to contribute to the original project, you should talk with [them][8].
 
-## Features included in this version
+## Features included in this custom version
 - OS look & feel (not Java look & feel)
-- updated icons
+- updated logo icon
 - fixed ScavengerHunt
 
 ## How to run / compile MARS
