@@ -15,6 +15,7 @@ If you want to contribute to the original project, you should talk with [them][8
 ## Features included in this version
 - OS look & feel (not Java look & feel)
 - updated icons
+- fixed ScavengerHunt
 
 ## How to run / compile MARS
 - In order to **run** MARS v4.XX, you must **install [JRE 1.8][9] (Java 8)**
