@@ -48,43 +48,35 @@ public class MarsBot implements Observer, MarsTool {
             panel = new JPanel(new BorderLayout());
             graphicArea = new MarsBotDisplay(GRAPHIC_WIDTH, GRAPHIC_HEIGHT);
             JPanel buttonPanel = new JPanel();
+
             JButton clearButton = new JButton("Clear");
-            clearButton.addActionListener(
-                    new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            graphicArea.clear();
-                            MarsBotLeaveTrack = false; // true --> leave track when moving, false --> do not ...
-                            MarsBotXPosition = 0; // X pixel position of MarsBot
-                            MarsBotYPosition = 0; // Y pixel position of MarsBot
-                            MarsBotMoving = false; // true --> MarsBot is moving, false --> MarsBot not moving
+            clearButton.addActionListener(e -> {
+                graphicArea.clear();
+                MarsBotLeaveTrack = false; // true --> leave track when moving, false --> do not ...
+                MarsBotXPosition = 0; // X pixel position of MarsBot
+                MarsBotYPosition = 0; // Y pixel position of MarsBot
+                MarsBotMoving = false; // true --> MarsBot is moving, false --> MarsBot not moving
 
-                            trackIndex = 0;
+                trackIndex = 0;
 
-                        }
-
-                    });
+            });
             buttonPanel.add(clearButton);
+
             JButton closeButton = new JButton("Close");
-            closeButton.addActionListener(
-                    new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            frame.setVisible(false);
-
-                        }
-
-                    });
+            closeButton.addActionListener(e -> frame.setVisible(false));
             buttonPanel.add(closeButton);
+
             panel.add(graphicArea, BorderLayout.CENTER);
             panel.add(buttonPanel, BorderLayout.SOUTH);
             frame.getContentPane().add(panel);
-            frame.pack();
-            frame.setVisible(true);
-            frame.setTitle(" This is the MarsBot");
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // changed 12/12/09 DPS (was EXIT)
-            frame.setSize(GRAPHIC_WIDTH + 200, GRAPHIC_HEIGHT + 100); // TBD  SIZE
-            frame.setVisible(true); // show();
 
-        } // end BotRunnable() constructor
+            frame.setTitle("This is the MarsBot");
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            frame.setPreferredSize(new Dimension(GRAPHIC_WIDTH + 200, GRAPHIC_HEIGHT + 100));
+            frame.pack();
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
 
         public void run() {
 
