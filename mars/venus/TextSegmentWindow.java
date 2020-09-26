@@ -766,7 +766,6 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
                 // somehow, user was able to display out-of-range address.  Most likely to occur between
                 // stack base and Kernel.  
                 catch (AddressErrorException aee) {
-                    return;
                 }
             }// end synchronized block
         }
