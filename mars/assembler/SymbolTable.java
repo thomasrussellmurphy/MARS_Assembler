@@ -92,7 +92,7 @@ public class SymbolTable {
     public void removeSymbol(Token token) {
         String label = token.getValue();
         for (int i = 0; i < table.size(); i++) {
-            if (((Symbol) (table.get(i))).getName().equals(label)) {
+            if (table.get(i).getName().equals(label)) {
                 table.remove(i);
                 if (Globals.debug)
                     System.out.println("The symbol " + label + " has been removed from the " + this.filename + " symbol table.");
@@ -110,8 +110,8 @@ public class SymbolTable {
      **/
     public int getAddress(String s) {
         for (int i = 0; i < table.size(); i++) {
-            if (((Symbol) (table.get(i))).getName().equals(s)) {
-                return ((Symbol) table.get(i)).getAddress();
+            if (table.get(i).getName().equals(s)) {
+                return table.get(i).getAddress();
             }
         }
         return NOT_FOUND;
@@ -140,8 +140,8 @@ public class SymbolTable {
 
     public Symbol getSymbol(String s) {
         for (int i = 0; i < table.size(); i++) {
-            if (((Symbol) (table.get(i))).getName().equals(s)) {
-                return (Symbol) table.get(i);
+            if (table.get(i).getName().equals(s)) {
+                return table.get(i);
             }
         }
         return null;
@@ -162,8 +162,8 @@ public class SymbolTable {
             return null;
         }
         for (int i = 0; i < table.size(); i++) {
-            if (((Symbol) (table.get(i))).getAddress() == address) {
-                return (Symbol) table.get(i);
+            if (table.get(i).getAddress() == address) {
+                return table.get(i);
             }
         }
         return null;
@@ -191,7 +191,7 @@ public class SymbolTable {
     public ArrayList<Symbol> getDataSymbols() {
         ArrayList<Symbol> list = new ArrayList<>();
         for (int i = 0; i < table.size(); i++) {
-            if (((Symbol) table.get(i)).getType()) {
+            if (table.get(i).getType()) {
                 list.add(table.get(i));
             }
         }
@@ -208,7 +208,7 @@ public class SymbolTable {
     public ArrayList<Symbol> getTextSymbols() {
         ArrayList<Symbol> list = new ArrayList<>();
         for (int i = 0; i < table.size(); i++) {
-            if (!((Symbol) table.get(i)).getType()) {
+            if (!table.get(i).getType()) {
                 list.add(table.get(i));
             }
         }

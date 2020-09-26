@@ -60,7 +60,7 @@ public class SyscallRandIntRange extends AbstractSyscall {
         // Return: $a0 = the next pseudorandom, uniformly distributed int value from this
         // random number generator's sequence.
         Integer index = RegisterFile.getValue(4);
-        Random stream = (Random) RandomStreams.randomStreams.get(index);
+        Random stream = RandomStreams.randomStreams.get(index);
         if (stream == null) {
             stream = new Random(); // create a non-seeded stream
             RandomStreams.randomStreams.put(index, stream);

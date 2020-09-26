@@ -117,7 +117,7 @@ public class ProgramStatement {
             this.operands = null;
             this.numOperands = 0;
             this.instruction = (binaryStatement == 0) // this is a "nop" statement
-                    ? (Instruction) Globals.instructionSet.matchOperator("nop").get(0)
+                    ? Globals.instructionSet.matchOperator("nop").get(0)
                     : null;
         } else {
             this.operands = new int[4];
@@ -703,7 +703,7 @@ public class ProgramStatement {
 
             StringBuffer result = new StringBuffer();
             for (int i = 0; i < list.size(); i++) {
-                ListElement e = (ListElement) list.get(i);
+                ListElement e = list.get(i);
                 switch (e.type) {
                     case 0:
                         result.append(e.sValue);

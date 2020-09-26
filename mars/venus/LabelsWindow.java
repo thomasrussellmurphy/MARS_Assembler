@@ -176,7 +176,7 @@ public class LabelsWindow extends JInternalFrame {
         ArrayList<Box> tableNames = new ArrayList<>();
         JTableHeader tableHeader = null;
         for (int i = 0; i < listOfLabelsForSymbolTable.size(); i++) {
-            LabelsForSymbolTable symtab = (LabelsForSymbolTable) listOfLabelsForSymbolTable.get(i);
+            LabelsForSymbolTable symtab = listOfLabelsForSymbolTable.get(i);
             if (symtab.hasSymbols()) {
                 String name = symtab.getSymbolTableName();
                 if (name.length() > MAX_DISPLAYED_CHARS) {
@@ -212,7 +212,7 @@ public class LabelsWindow extends JInternalFrame {
         // the table beneath it -- the table column widths are stretched to attain the same width and
         // the address information requires scrolling to see.  All because of a long file name.
         for (int i = 0; i < tableNames.size(); i++) {
-            JComponent nameLabel = (JComponent) tableNames.get(i);
+            JComponent nameLabel = tableNames.get(i);
             nameLabel.setMaximumSize(new Dimension(
                     labelScrollPane.getViewport().getViewSize().width,
                     (int) (1.5 * nameLabel.getFontMetrics(nameLabel.getFont()).getHeight())));
@@ -229,7 +229,7 @@ public class LabelsWindow extends JInternalFrame {
     public void updateLabelAddresses() {
         if (listOfLabelsForSymbolTable != null) {
             for (int i = 0; i < listOfLabelsForSymbolTable.size(); i++) {
-                ((LabelsForSymbolTable) listOfLabelsForSymbolTable.get(i)).updateLabelAddresses();
+                listOfLabelsForSymbolTable.get(i).updateLabelAddresses();
             }
         }
     }
@@ -240,7 +240,7 @@ public class LabelsWindow extends JInternalFrame {
     private class LabelItemListener implements ItemListener {
         public void itemStateChanged(ItemEvent ie) {
             for (int i = 0; i < listOfLabelsForSymbolTable.size(); i++) {
-                ((LabelsForSymbolTable) listOfLabelsForSymbolTable.get(i)).generateLabelTable();
+                listOfLabelsForSymbolTable.get(i).generateLabelTable();
             }
         }
     }
@@ -331,7 +331,7 @@ public class LabelsWindow extends JInternalFrame {
             labelData = new Object[symbols.size()][2];
 
             for (int i = 0; i < symbols.size(); i++) {//sets up the label table
-                Symbol s = (Symbol) (symbols.get(i));
+                Symbol s = symbols.get(i);
                 labelData[i][LABEL_COLUMN] = s.getName();
                 labelData[i][ADDRESS_COLUMN] = NumberDisplayBaseChooser.formatNumber(s.getAddress(), addressBase);
             }
@@ -354,7 +354,7 @@ public class LabelsWindow extends JInternalFrame {
             String formattedAddress;
             int numSymbols = (labelData == null) ? 0 : labelData.length;
             for (int i = 0; i < numSymbols; i++) {
-                address = ((Symbol) symbols.get(i)).getAddress();
+                address = symbols.get(i).getAddress();
                 formattedAddress = NumberDisplayBaseChooser.formatNumber(address, addressBase);
                 labelTable.getModel().setValueAt(formattedAddress, i, ADDRESS_COLUMN);
             }

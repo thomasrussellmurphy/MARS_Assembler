@@ -2042,7 +2042,7 @@ public class InstructionSet {
                                 }
                                 // convert single precision in $f1 to double stored in $f2
                                 long result = Double.doubleToLongBits(
-                                        (double) Float.intBitsToFloat(Coprocessor1.getValue(operands[1])));
+                                        Float.intBitsToFloat(Coprocessor1.getValue(operands[1])));
                                 Coprocessor1.updateRegister(operands[0] + 1, Binary.highOrderLongToInt(result));
                                 Coprocessor1.updateRegister(operands[0], Binary.lowOrderLongToInt(result));
                             }
@@ -2060,7 +2060,7 @@ public class InstructionSet {
                                 }
                                 // convert integer to double (interpret $f1 value as int?)
                                 long result = Double.doubleToLongBits(
-                                        (double) Coprocessor1.getValue(operands[1]));
+                                        Coprocessor1.getValue(operands[1]));
                                 Coprocessor1.updateRegister(operands[0] + 1, Binary.highOrderLongToInt(result));
                                 Coprocessor1.updateRegister(operands[0], Binary.lowOrderLongToInt(result));
                             }
@@ -2679,7 +2679,7 @@ public class InstructionSet {
         // Initialization step.  Create token list for each instruction example.  This is
         // used by parser to determine user program correct syntax.
         for (int i = 0; i < instructionList.size(); i++) {
-            Instruction inst = (Instruction) instructionList.get(i);
+            Instruction inst = instructionList.get(i);
             inst.createExampleTokenList();
         }
 
@@ -2791,7 +2791,7 @@ public class InstructionSet {
         ArrayList<Instruction> matchingInstructions = null;
         // Linear search for now....
         for (int i = 0; i < instructionList.size(); i++) {
-            if (((Instruction) instructionList.get(i)).getName().equalsIgnoreCase(name)) {
+            if (instructionList.get(i).getName().equalsIgnoreCase(name)) {
                 if (matchingInstructions == null)
                     matchingInstructions = new ArrayList<>();
                 matchingInstructions.add(instructionList.get(i));
@@ -2814,7 +2814,7 @@ public class InstructionSet {
         // Linear search for now....
         if (name != null) {
             for (int i = 0; i < instructionList.size(); i++) {
-                if (((Instruction) instructionList.get(i)).getName().toLowerCase().startsWith(name.toLowerCase())) {
+                if (instructionList.get(i).getName().toLowerCase().startsWith(name.toLowerCase())) {
                     if (matchingInstructions == null)
                         matchingInstructions = new ArrayList<>();
                     matchingInstructions.add(instructionList.get(i));

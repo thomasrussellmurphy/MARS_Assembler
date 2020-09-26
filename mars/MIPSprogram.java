@@ -206,7 +206,7 @@ public class MIPSprogram {
 
     public String getSourceLine(int i) {
         if ((i >= 1) && (i <= sourceList.size()))
-            return (String) sourceList.get(i - 1);
+            return sourceList.get(i - 1);
         else
             return null;
     }
@@ -278,7 +278,7 @@ public class MIPSprogram {
             leadFilePosition = 1;
         }
         for (int i = 0; i < filenames.size(); i++) {
-            String filename = (String) filenames.get(i);
+            String filename = filenames.get(i);
             MIPSprogram preparee = (filename.equals(leadFilename)) ? this : new MIPSprogram();
             preparee.readSource(filename);
             preparee.tokenize();

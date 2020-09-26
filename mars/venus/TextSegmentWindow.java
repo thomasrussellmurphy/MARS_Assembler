@@ -668,7 +668,7 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
     private int findRowForAddress(int address) throws IllegalArgumentException {
         int addressRow = 0;
         try {
-            addressRow = (Integer) addressRows.get(address);
+            addressRow = addressRows.get(address);
         } catch (NullPointerException e) {
             throw new IllegalArgumentException(); // address not found in map
             //return addressRow;// if address not in map, do nothing.

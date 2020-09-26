@@ -82,7 +82,7 @@ public class TokenList implements Cloneable {
      * @return the requested token, or ArrayIndexOutOfBounds exception
      */
     public Token get(int pos) {
-        return (Token) tokenList.get(pos);
+        return tokenList.get(pos);
     }
 
     /**
@@ -159,7 +159,7 @@ public class TokenList implements Cloneable {
     public String toTypeString() {
         String stringified = "";
         for (int i = 0; i < tokenList.size(); i++) {
-            stringified += ((Token) tokenList.get(i)).getType().toString() + " ";
+            stringified += tokenList.get(i).getType().toString() + " ";
         }
         return stringified;
     }

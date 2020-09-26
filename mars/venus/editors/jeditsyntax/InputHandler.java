@@ -136,7 +136,7 @@ public abstract class InputHandler extends KeyAdapter {
      * @param name The action name
      */
     public static ActionListener getAction(String name) {
-        return (ActionListener) actions.get(name);
+        return actions.get(name);
     }
 
     /**

@@ -111,7 +111,7 @@ class SyscallLoader {
             override = (SyscallNumberOverride) overrides.get(index);
             boolean match = false;
             for (int i = 0; i < syscallList.size(); i++) {
-                syscall = (Syscall) syscallList.get(i);
+                syscall = syscallList.get(i);
                 if (override.getName().equals(syscall.getName())) {
                     // we have a match to service name, assign new number
                     syscall.setNumber(override.getNumber());
@@ -133,9 +133,9 @@ class SyscallLoader {
         Syscall syscallA, syscallB;
         boolean duplicates = false;
         for (int i = 0; i < syscallList.size(); i++) {
-            syscallA = (Syscall) syscallList.get(i);
+            syscallA = syscallList.get(i);
             for (int j = i + 1; j < syscallList.size(); j++) {
-                syscallB = (Syscall) syscallList.get(j);
+                syscallB = syscallList.get(j);
                 if (syscallA.getNumber() == syscallB.getNumber()) {
                     System.out.println("Error: syscalls " + syscallA.getName() + " and " +
                             syscallB.getName() + " are both assigned same number " + syscallA.getNumber());
@@ -160,7 +160,7 @@ class SyscallLoader {
             loadSyscalls();
         }
         for (int index = 0; index < syscallList.size(); index++) {
-            service = (Syscall) syscallList.get(index);
+            service = syscallList.get(index);
             if (service.getNumber() == number) {
                 match = service;
             }

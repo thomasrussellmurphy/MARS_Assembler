@@ -156,7 +156,7 @@ public class BHTableModel extends AbstractTableModel {
      */
     public Object getValueAt(int row, int col) {
 
-        BHTEntry e = (BHTEntry) m_entries.elementAt(row);
+        BHTEntry e = m_entries.elementAt(row);
         if (e == null) return "";
 
         if (col == 0) return row;
@@ -225,7 +225,7 @@ public class BHTableModel extends AbstractTableModel {
         if (index < 0 || index > m_entryCnt)
             throw new IllegalArgumentException("Only indexes in the range 0 to " + (m_entryCnt - 1) + " allowed");
 
-        return ((BHTEntry) m_entries.elementAt(index)).getPrediction();
+        return m_entries.elementAt(index).getPrediction();
     }
 
 
@@ -240,7 +240,7 @@ public class BHTableModel extends AbstractTableModel {
         if (index < 0 || index > m_entryCnt)
             throw new IllegalArgumentException("Only indexes in the range 0 to " + (m_entryCnt - 1) + " allowed");
 
-        ((BHTEntry) m_entries.elementAt(index)).updatePrediction(branchTaken);
+        m_entries.elementAt(index).updatePrediction(branchTaken);
         fireTableRowsUpdated(index, index);
     }
 

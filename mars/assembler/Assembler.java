@@ -358,7 +358,7 @@ public class Assembler {
         for (int i = 0; i < this.machineList.size(); i++) {
             if (errors.errorLimitExceeded())
                 break;
-            statement = (ProgramStatement) this.machineList.get(i);
+            statement = this.machineList.get(i);
             statement.buildMachineStatementFromBasicStatement(errors);
             if (Globals.debug)
                 System.out.println(statement);
@@ -1185,7 +1185,7 @@ public class Assembler {
                         }
                     }
                     try {
-                        Globals.memory.set(this.dataAddress.get(), (int) theChar,
+                        Globals.memory.set(this.dataAddress.get(), theChar,
                                 DataTypes.CHAR_SIZE);
                     } catch (AddressErrorException e) {
                         errors.add(new ErrorMessage(token.getSourceMIPSprogram(), token
@@ -1293,8 +1293,8 @@ public class Assembler {
         // is needed when signs of the two operands differ.
         public int compare(ProgramStatement obj1, ProgramStatement obj2) {
             if (obj1 instanceof ProgramStatement && obj2 instanceof ProgramStatement) {
-                int addr1 = ((ProgramStatement) obj1).getAddress();
-                int addr2 = ((ProgramStatement) obj2).getAddress();
+                int addr1 = obj1.getAddress();
+                int addr2 = obj2.getAddress();
                 return (addr1 < 0 && addr2 >= 0 || addr1 >= 0 && addr2 < 0) ? addr2 : addr1 - addr2;
             } else {
                 throw new ClassCastException();
@@ -1404,7 +1404,7 @@ public class Assembler {
             int labelAddress;
             DataSegmentForwardReference entry;
             for (int i = 0; i < forwardReferenceList.size(); i++) {
-                entry = (DataSegmentForwardReference) forwardReferenceList.get(i);
+                entry = forwardReferenceList.get(i);
                 labelAddress = localSymtab.getAddressLocalOrGlobal(entry.token.getValue());
                 if (labelAddress != SymbolTable.NOT_FOUND) {
                     // patch address has to be valid b/c we already stored there...
@@ -1425,7 +1425,7 @@ public class Assembler {
         private void generateErrorMessages(ErrorList errors) {
             DataSegmentForwardReference entry;
             for (int i = 0; i < forwardReferenceList.size(); i++) {
-                entry = (DataSegmentForwardReference) forwardReferenceList.get(i);
+                entry = forwardReferenceList.get(i);
                 errors.add(new ErrorMessage(entry.token.getSourceMIPSprogram(), entry.token
                         .getSourceLine(), entry.token.getStartPos(), "Symbol \""
                         + entry.token.getValue() + "\" not found in symbol table."));

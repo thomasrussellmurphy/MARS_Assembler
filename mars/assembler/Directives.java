@@ -94,7 +94,7 @@ public final class Directives {
     public static Directives matchDirective(String str) {
         Directives match;
         for (int i = 0; i < directiveList.size(); i++) {
-            match = (Directives) directiveList.get(i);
+            match = directiveList.get(i);
             if (str.equalsIgnoreCase(match.descriptor)) {
                 return match;
             }
@@ -114,7 +114,7 @@ public final class Directives {
     public static ArrayList<Directives> prefixMatchDirectives(String str) {
         ArrayList<Directives> matches = null;
         for (int i = 0; i < directiveList.size(); i++) {
-            if (((Directives) directiveList.get(i)).descriptor.toLowerCase().startsWith(str.toLowerCase())) {
+            if (directiveList.get(i).descriptor.toLowerCase().startsWith(str.toLowerCase())) {
                 if (matches == null) {
                     matches = new ArrayList<>();
                 }

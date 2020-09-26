@@ -140,7 +140,7 @@ public class RunSpeedPanel extends JPanel {
         public void stateChanged(ChangeEvent e) {
             JSlider source = (JSlider) e.getSource();
             if (!source.getValueIsAdjusting()) {
-                runSpeedIndex = (int) source.getValue();
+                runSpeedIndex = source.getValue();
             } else {
                 sliderLabel.setText(setLabel(source.getValue()));
             }

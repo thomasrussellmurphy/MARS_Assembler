@@ -687,7 +687,7 @@ public class EditTabbedPane extends JTabbedPane {
                 // Last one added becomes the default.
                 fileChooser.resetChoosableFileFilters();
                 for (int i = 0; i < fileFilterList.size(); i++) {
-                    fileChooser.addChoosableFileFilter((FileFilter) fileFilterList.get(i));
+                    fileChooser.addChoosableFileFilter(fileFilterList.get(i));
                 }
                 // Restore listener.
                 if (activeListener) {

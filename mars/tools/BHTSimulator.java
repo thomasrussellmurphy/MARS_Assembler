@@ -187,7 +187,7 @@ public class BHTSimulator extends AbstractMarsToolAndApplication implements Acti
         m_gui.getTaLog().setText("");
         m_bhtModel.initBHT((Integer) m_gui.getCbBHTentries().getSelectedItem(),
                 (Integer) m_gui.getCbBHThistory().getSelectedItem(),
-                ((String) m_gui.getCbBHTinitVal().getSelectedItem()).equals(BHTSimGUI.BHT_TAKE_BRANCH));
+                m_gui.getCbBHTinitVal().getSelectedItem().equals(BHTSimGUI.BHT_TAKE_BRANCH));
 
         m_pendingBranchInstAddress = 0;
         m_lastBranchTaken = false;

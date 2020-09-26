@@ -381,7 +381,7 @@ public class MIPSTokenMarker extends TokenMarker {
         if (directiveMatches != null) {
             matches = new ArrayList<>();
             for (int i = 0; i < directiveMatches.size(); i++) {
-                Directives direct = (Directives) directiveMatches.get(i);
+                Directives direct = directiveMatches.get(i);
                 matches.add(new PopupHelpItem(tokenText, direct.getName(), direct.getDescription(), exact));
             }
         }
@@ -432,7 +432,7 @@ public class MIPSTokenMarker extends TokenMarker {
                 Iterator mnemonicList = mnemonics.iterator();
                 while (mnemonicList.hasNext()) {
                     String mnemonic = (String) mnemonicList.next();
-                    String info = (String) insts.get(mnemonic);
+                    String info = insts.get(mnemonic);
                     results.add(new PopupHelpItem(tokenText, mnemonic, info, exact));
                 }
             }
