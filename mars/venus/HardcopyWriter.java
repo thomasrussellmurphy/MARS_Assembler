@@ -340,7 +340,7 @@ public class HardcopyWriter extends Writer {
             in.close();
             out.close();
         } catch (Exception e) {
-            System.err.println(e);
+            e.printStackTrace();
             System.err.println("Usage: " +
                     "java HardcopyWriter$PrintFile <filename>");
             System.exit(1);

@@ -101,7 +101,7 @@ public class MarsSplashScreen extends JWindow {
             try {
                 image = new ImageIcon(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource(Globals.imagesPath + "MarsSurfacePathfinder.jpg"))).getImage();
             } catch (Exception e) {
-                System.out.println(e); /*handled in paintComponent()*/
+                e.printStackTrace();
             }
         }
 

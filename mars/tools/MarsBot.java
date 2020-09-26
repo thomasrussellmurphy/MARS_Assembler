@@ -229,8 +229,8 @@ public class MarsBot implements Observer, MarsTool {
         // New: DPS 27 Feb 2006.  Register observer for memory subrange.
         try {
             Globals.memory.addObserver(this, 0xffff8000, 0xffff8060);
-        } catch (AddressErrorException aee) {
-            System.out.println(aee);
+        } catch (AddressErrorException e) {
+            e.printStackTrace();
         }
     }
 
