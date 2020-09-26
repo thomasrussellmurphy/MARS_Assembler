@@ -193,30 +193,19 @@ public class ScavengerHunt implements Observer, MarsTool {
 
         public ScavengerHuntRunnable() // constructor
         {
-            // final JFrame frame = new JFrame("ScavengerHunt");
             // Recommended by Pete Sanderson, 2 Nov. 2006, so that the Tool window and
             // MARS window can be on the screen at the same time.
             final JDialog dialog = new JDialog(Globals.getGui(), "ScavengerHunt");
-
-            // System.out.println("ScavengerHuntRunnable.constructor: starting....");
 
             panel = new JPanel(new BorderLayout());
             graphicArea = new ScavengerHuntDisplay(GRAPHIC_WIDTH, GRAPHIC_HEIGHT);
             JPanel buttonPanel = new JPanel();
             JButton resetButton = new JButton("Reset");
-            resetButton.addActionListener(
-                    new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            graphicArea.clear();
-
-                            // TBD ------- TBD
-                            // Reset actions here
-                            initializeScavengerData();
-                            //JOptionPane.showMessageDialog(null, "Reset needs to be implemented!" );
-
-                        }
-
-                    });
+            resetButton.addActionListener(e -> {
+                graphicArea.clear();
+                // Reset actions here
+                initializeScavengerData();
+            });
             buttonPanel.add(resetButton);
 
             panel.add(graphicArea, BorderLayout.CENTER);
@@ -238,7 +227,7 @@ public class ScavengerHunt implements Observer, MarsTool {
             dialog.pack();
             dialog.setLocationRelativeTo(null);
             dialog.setVisible(true);
-        } // end ScavengerHuntRunnable() constructor
+        }
 
         public void run() {
 
@@ -262,7 +251,7 @@ public class ScavengerHunt implements Observer, MarsTool {
 
         } // end run method of ScavengerHuntRunnable class
 
-    } // end ScavengerHuntRunnable class
+    }
 
     /* ------------------------------------------------------------------------- */
 
@@ -281,7 +270,6 @@ public class ScavengerHunt implements Observer, MarsTool {
             // System.out.println("ScavengerHuntDisplay.constructor: starting....");
             width = tw;
             height = th;
-
         }
 
         public void redraw() {
@@ -306,7 +294,6 @@ public class ScavengerHunt implements Observer, MarsTool {
             int yCoord;
 
             // System.out.println("ScavengerHuntDisplay.paintComponent: I'm painting! n is " + n);
-
 
             // Recover Graphics2D
             Graphics2D g2 = (Graphics2D) g;
