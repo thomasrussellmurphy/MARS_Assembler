@@ -2278,7 +2278,7 @@ public class JEditTextArea extends JComponent {
                 // The solution, as shown here, is to use invokeLater.
                 final MenuElement[] newPath = new MenuElement[2];
                 newPath[0] = path[0];
-                newPath[1] = (MenuElement) popupMenu.getComponentAtIndex(index);
+                newPath[1] = (MenuElement) popupMenu.getComponent(index);
                 SwingUtilities.invokeLater(
                         new Runnable() {
                             public void run() {

@@ -45,8 +45,7 @@ public class SettingsAssembleOnOpenAction extends GuiAction {
     }
 
     public void actionPerformed(ActionEvent e) {
-        Globals.getSettings().setAssembleOnOpenEnabled(
-                ((JCheckBoxMenuItem) e.getSource()).isSelected());
+        Globals.getSettings().setBooleanSetting(Settings.ASSEMBLE_ON_OPEN_ENABLED, ((JCheckBoxMenuItem) e.getSource()).isSelected());
     }
 
 }

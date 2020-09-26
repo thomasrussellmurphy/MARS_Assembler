@@ -48,7 +48,7 @@ public class SettingsProgramArgumentsAction extends GuiAction {
 
     public void actionPerformed(ActionEvent e) {
         boolean selected = ((JCheckBoxMenuItem) e.getSource()).isSelected();
-        Globals.getSettings().setProgramArguments(selected);
+        Globals.getSettings().setBooleanSetting(Settings.PROGRAM_ARGUMENTS, selected);
         if (selected) {
             Globals.getGui().getMainPane().getExecutePane().getTextSegmentWindow().addProgramArgumentsPanel();
         } else {

@@ -557,7 +557,7 @@ public class EditTabbedPane extends JTabbedPane {
             // Set default to previous file opened, if any.  This is useful in conjunction
             // with option to assemble file automatically upon opening.  File likely to have
             // been edited externally (e.g. by Mipster).
-            if (Globals.getSettings().getAssembleOnOpenEnabled() && mostRecentlyOpenedFile != null) {
+            if (Globals.getSettings().getBooleanSetting(Settings.ASSEMBLE_ON_OPEN_ENABLED) && mostRecentlyOpenedFile != null) {
                 fileChooser.setSelectedFile(mostRecentlyOpenedFile);
             }
 
@@ -571,7 +571,7 @@ public class EditTabbedPane extends JTabbedPane {
 
                 // possibly send this file right through to the assembler by firing Run->Assemble's
                 // actionPerformed() method.
-                if (theFile.canRead() && Globals.getSettings().getAssembleOnOpenEnabled()) {
+                if (theFile.canRead() && Globals.getSettings().getBooleanSetting(Settings.ASSEMBLE_ON_OPEN_ENABLED)) {
                     mainUI.getRunAssembleAction().actionPerformed(null);
                 }
             }

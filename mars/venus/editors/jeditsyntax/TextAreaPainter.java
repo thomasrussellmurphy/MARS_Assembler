@@ -67,19 +67,6 @@ public class TextAreaPainter extends JComponent implements TabExpander {
     }
 
     /**
-     * Returns if this component can be traversed by pressing the
-     * Tab key. This returns false.
-     * <p>
-     * NOTE: as of Java 1.4 this method is deprecated and no longer
-     * has the desired effect because the focus subsystem does not
-     * call it.  I've implemented a KeyEventDispatcher in JEditTextArea
-     * to handle Tabs. DPS 12-May-2010
-     */
-    public final boolean isManagingFocus() {
-        return false;
-    }
-
-    /**
      * Fetch the tab size in characters.  DPS 12-May-2010.
      *
      * @return int tab size in characters
