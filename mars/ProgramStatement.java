@@ -375,6 +375,7 @@ public class ProgramStatement {
      * @return A String representing the ProgramStatement.
      **/
 
+    @SuppressWarnings("DuplicateExpressions")
     public String toString() {
         // a crude attempt at string formatting.  Where's C when you need it?
         String blanks = "                               ";
