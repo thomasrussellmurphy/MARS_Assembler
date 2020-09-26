@@ -207,7 +207,7 @@ public class Coprocessor1Window extends JPanel implements ActionListener, Observ
 
     private void updateConditionFlagDisplay() {
         for (int i = 0; i < conditionFlagCheckBox.length; i++) {
-            conditionFlagCheckBox[i].setSelected((Coprocessor1.getConditionFlag(i) == 0) ? false : true);
+            conditionFlagCheckBox[i].setSelected(Coprocessor1.getConditionFlag(i) != 0);
         }
     }
 
