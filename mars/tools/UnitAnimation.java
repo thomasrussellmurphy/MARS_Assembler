@@ -711,8 +711,10 @@ class UnitAnimation extends JPanel
                             tempVertex = outputGraph.get(vert.getNumIndex()).get(k);
                             boolean hasThisVertex = false;
                             for (int m = 0; m < vertexTraversed.size(); m++) {
-                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
+                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex()) {
                                     hasThisVertex = true;
+                                    break;
+                                }
                             }
                             if (!hasThisVertex) {
                                 outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
@@ -729,8 +731,10 @@ class UnitAnimation extends JPanel
                             tempVertex = outputGraph.get(vert.getNumIndex()).get(k);
                             boolean hasThisVertex = false;
                             for (int m = 0; m < vertexTraversed.size(); m++) {
-                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
+                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex()) {
                                     hasThisVertex = true;
+                                    break;
+                                }
                             }
                             if (!hasThisVertex) {
                                 outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
@@ -754,8 +758,10 @@ class UnitAnimation extends JPanel
                             tempVertex = outputGraph.get(vert.getNumIndex()).get(k);
                             boolean hasThisVertex = false;
                             for (int m = 0; m < vertexTraversed.size(); m++) {
-                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
+                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex()) {
                                     hasThisVertex = true;
+                                    break;
+                                }
                             }
                             if (!hasThisVertex) {
                                 outputGraph.get(vert.getNumIndex()).get(k).setActive(true);
@@ -773,8 +779,10 @@ class UnitAnimation extends JPanel
                             tempVertex = outputGraph.get(vert.getNumIndex()).get(k);
                             boolean hasThisVertex = false;
                             for (int m = 0; m < vertexTraversed.size(); m++) {
-                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex())
+                                if (tempVertex.getNumIndex() == vertexTraversed.get(m).getNumIndex()) {
                                     hasThisVertex = true;
+                                    break;
+                                }
                             }
                             if (!hasThisVertex) {
                                 outputGraph.get(vert.getNumIndex()).get(k).setActive(true);

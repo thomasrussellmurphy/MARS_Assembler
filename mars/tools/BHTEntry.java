@@ -123,8 +123,10 @@ public class BHTEntry {
             boolean changePrediction = true;
 
             for (int i = 0; i < m_history.length; i++) {
-                if (m_history[i] != branchTaken)
+                if (m_history[i] != branchTaken) {
                     changePrediction = false;
+                    break;
+                }
             }
 
             if (changePrediction)
