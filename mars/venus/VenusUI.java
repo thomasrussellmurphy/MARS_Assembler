@@ -83,6 +83,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       private JButton New, Open, Save, SaveAs, SaveAll, DumpMemory, Print;
       private JButton Run, Assemble, Reset, Step, Backstep, Stop, Pause;
       private JButton Help;
+      private JButton Refresh;
    
       // The "action" objects, which include action listeners.  One of each will be created then
    	// shared between a menu item and its corresponding toolbar button.  This is a very cool
@@ -101,6 +102,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       					settingsDelayedBranchingAction, settingsExceptionHandlerAction, settingsEditorAction,
       					settingsHighlightingAction, settingsMemoryConfigurationAction, settingsSelfModifyingCodeAction;    
       private Action helpHelpAction, helpAboutAction;
+      private Action fileRefreshAllAction;
    
    
     /**
@@ -267,6 +269,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             fileSaveAllAction = new FileSaveAllAction("Save All", null,
                                             "Save all open files", new Integer(KeyEvent.VK_V),
                									  null, mainUI);	
+            fileRefreshAllAction = new FileRefreshAllAction("Refresh All", new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"Refresh22.png"))),
+            										"Refresh all open files", new Integer(KeyEvent.VK_Q),
+            										KeyStroke.getKeyStroke( KeyEvent.VK_Q, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()),
+            										mainUI);
             fileDumpMemoryAction = new FileDumpMemoryAction("Dump Memory ...", 
                                             new ImageIcon(tk.getImage(cs.getResource(Globals.imagesPath+"Dump22.png"))),
                									  "Dump machine code or data in an available format", new Integer(KeyEvent.VK_D),
@@ -666,6 +672,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          DumpMemory.setText("");
          Print= new JButton(filePrintAction);
          Print.setText("");
+         Refresh = new JButton(fileRefreshAllAction);
+         Refresh.setText("");
       
          Undo = new JButton(editUndoAction);
          Undo.setText(""); 
@@ -707,6 +715,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             toolBar.add(DumpMemory);
          }
          toolBar.add(Print);
+         toolBar.add(new JToolBar.Separator());
+         toolBar.add(Refresh);
          toolBar.add(new JToolBar.Separator());
          toolBar.add(Undo);
          toolBar.add(Redo);
@@ -786,6 +796,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          fileSaveAllAction.setEnabled(false);
          fileDumpMemoryAction.setEnabled(false);
          filePrintAction.setEnabled(false);
+         fileRefreshAllAction.setEnabled(false);
          fileExitAction.setEnabled(true);
          editUndoAction.setEnabled(false);
          editRedoAction.setEnabled(false);
@@ -825,6 +836,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          fileSaveAllAction.setEnabled(true);
          fileDumpMemoryAction.setEnabled(false);
          filePrintAction.setEnabled(true);
+         fileRefreshAllAction.setEnabled(true);
          fileExitAction.setEnabled(true);
          editCutAction.setEnabled(true);
          editCopyAction.setEnabled(true);
@@ -866,6 +878,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          fileSaveAllAction.setEnabled(true);
          fileDumpMemoryAction.setEnabled(false);
          filePrintAction.setEnabled(true);
+         fileRefreshAllAction.setEnabled(true);
          fileExitAction.setEnabled(true);
          editCutAction.setEnabled(true);
          editCopyAction.setEnabled(true);

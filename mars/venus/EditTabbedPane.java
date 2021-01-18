@@ -439,6 +439,37 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
      
    	
+    /**
+     * Re-load all files currently open. If changes has been made, 
+     * prompt the user to save or discard local changes. Helpful for using an
+     * external editor.
+     * @return true if operation succeeded, otherwise false
+     */
+	public boolean refreshAllFiles() {
+		boolean result = false;
+		int tabCount = getTabCount();
+		if (tabCount > 0) {
+			result = true;
+			EditPane[] tabs = new EditPane[tabCount];
+			String[] paths	= new String[tabCount];
+			String savedPanePath = getCurrentEditTab().getPathname();
+			for (int i = 0; i < tabCount; i++) {
+				tabs[i] = (EditPane) getComponentAt(i);
+				paths[i] = tabs[i].getPathname();
+
+				setSelectedComponent(tabs[i]);
+				if (tabs[i].hasUnsavedEdits()) {
+					editsSavedOrAbandoned();
+				}
+			}
+			for (int i = 0; i < tabCount; i++) {
+				remove(tabs[i]);
+				getCurrentEditTabForFile(new File(paths[i]));
+			}
+			getCurrentEditTabForFile(new File(savedPanePath));
+		}
+		return result;
+	}
    
    	/**
    	 * Remove the pane and update menu status
@@ -729,5 +760,5 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       
       
       }
-   
+
    }

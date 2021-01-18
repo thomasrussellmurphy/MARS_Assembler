@@ -236,6 +236,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        public boolean open() {
          return editTabbedPane.openFile();
       }
+       
+       /**
+        * Re-load all open files (tabs)
+        * @return true if succeeded, else false
+        */
+       public boolean refreshAll() {
+    	   return editTabbedPane.refreshAllFiles();
+       }
    
    
    

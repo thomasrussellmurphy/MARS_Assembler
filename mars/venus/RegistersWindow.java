@@ -85,7 +85,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
          tableData = new Object[35][3];
          registers = RegisterFile.getRegisters();
          for(int i=0; i< registers.length; i++){
-            tableData[i][0]= registers[i].getName();
+            tableData[i][0]= registers[i].getName(); 
             tableData[i][1]= new Integer(registers[i].getNumber());
             tableData[i][2]= NumberDisplayBaseChooser.formatNumber(registers[i].getValue(),valueBase);
          }
