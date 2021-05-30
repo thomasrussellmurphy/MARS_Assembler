@@ -25,7 +25,7 @@ I'm not going to accept any pull request. This source code is not maintained by 
  - **GNU/Linux** and **Mac**: execute the "CreateMarsJar.sh" to generate an executable. If you can't due of permissions, do a "**chmod +x CreateMarsJar.sh**" (Thanks to [@aesptux][8] to be the tester in Mac).
 
 ## License
-[MIT][2]. Chech the [LICENSE][3] file. All the credits go to the original developers.
+[MIT][2]. Check the [LICENSE][3] file. All the credits go to the original developers.
 
   [1]: http://courses.missouristate.edu/KenVollmar/MARS/index.htm
   [2]: http://www.opensource.org/licenses/mit-license.html
